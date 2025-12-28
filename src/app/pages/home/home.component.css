@@ -1,0 +1,104 @@
+:host {
+  --ancho-item: 150px; /* Más chico para el celu */
+  --alto-item: 220px;
+  --radio: 200px;      /* El translateZ, ajustado para que no se salga de la pantalla */
+}
+
+.escena {
+  width: var(--ancho-item);
+  height: var(--alto-item);
+  margin: 80px auto;
+  perspective: 800px; /* Un toque menos para que no maree en el celu */
+}
+
+.carrusel {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transform-style: preserve-3d;
+  animation: girar 50s infinite linear;
+}
+
+.item {
+  position: absolute;
+  width: var(--ancho-item);
+  height: var(--alto-item);
+  left: 0;
+  top: 0;
+  border: 1px solid rgba(255,255,255,0.5);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+/* Ajustamos las posiciones con la variable --radio */
+.item:nth-child(1) { transform: rotateY(0deg) translateZ(var(--radio)); }
+.item:nth-child(2) { transform: rotateY(60deg) translateZ(var(--radio)); }
+.item:nth-child(3) { transform: rotateY(120deg) translateZ(var(--radio)); }
+.item:nth-child(4) { transform: rotateY(180deg) translateZ(var(--radio)); }
+.item:nth-child(5) { transform: rotateY(240deg) translateZ(var(--radio)); }
+.item:nth-child(6) { transform: rotateY(300deg) translateZ(var(--radio)); }
+
+/* Responsive para pantallas más grandes (Desktop) */
+@media (min-width: 768px) {
+  :host {
+    --ancho-item: 250px;
+    --alto-item: 350px;
+    --radio: 350px;
+  }
+}
+
+@keyframes girar {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+.home-body, .home-header {
+  background-color: #FFD1D4;
+} 
+
+/* cards */
+
+.seccion-texto {
+  text-align: center;
+  padding: 40px 20px;
+  color: #333;
+}
+
+.contenedor-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Se acomodan solas, magia */
+  gap: 20px;
+  padding: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card-personalizada {
+  display: flex;
+  flex-direction: column; /* Apila foto y texto */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+  overflow: hidden;
+  height: 100%; /* Esto hace que todas las cards de la misma fila crezcan igual */
+}
+
+.img-container {
+  width: 100%;
+  height: 200px; /* Altura fija para la imagen */
+}
+
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que la foto no se estire como un chicle */
+}
+
+.card-body {
+  padding: 15px;
+  flex-grow: 1; /* Hace que el cuerpo ocupe el espacio restante */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
