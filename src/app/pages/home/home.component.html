@@ -1,45 +1,109 @@
-<header class="home-header">
-  <h2>Nuestros momentos</h2>
-  <app-navbar></app-navbar>
-</header>
+<html>
+  <header class="home-header">
+    <!-- <h2>Nuestros momentos</h2> -->
+    <app-navbar></app-navbar>
+  </header>
 
-<body class="home-body">
-  <div>
-    Aca va un poco de texto
-  </div>
-
-  <div class="escena">
-    <div class="carrusel">
-      <div class="item"><img src="https://picsum.photos/200/300?random=1" alt="foto1"></div>
-      <div class="item"><img src="https://picsum.photos/200/300?random=2" alt="foto2"></div>
-      <div class="item"><img src="https://picsum.photos/200/300?random=3" alt="foto3"></div>
-      <div class="item"><img src="https://picsum.photos/200/300?random=4" alt="foto4"></div>
-      <div class="item"><img src="https://picsum.photos/200/300?random=5" alt="foto5"></div>
-      <div class="item"><img src="https://picsum.photos/200/300?random=6" alt="foto6"></div>
+  <body class="home-body">
+    <div class="titulo">
+      <h1 class="topic">Para mi queria Reina</h1>
     </div>
-  </div>
-  <section class="seccion-texto">
-    <h2>Lo que siento por vos</h2>
-  </section>
-  <div class="contenedor-cards">
 
-    <div class="card-personalizada">
-      <div class="img-container">
-        <img src="https://picsum.photos/200/300?random=11" alt="foto">
+    <div class="music-player">
+  <p class="music-title">🎶 Elegí una canción</p>
+
+  <ul class="music-list">
+    @for (song of songs; track song; let i = $index) {
+      <li
+        class="music-item"
+        [class.active]="currentSongIndex === i"
+        (click)="playSong(i)"
+      >
+        <span class="song-name">{{ song.title }}</span>
+        <span class="icon">
+          {{ currentSongIndex === i && isPlaying ? '⏸' : '▶' }}
+        </span>
+      </li>
+    }
+  </ul>
+
+  <audio #audioRef></audio>
+</div>
+
+
+
+    <div class="escena">
+      <div class="carrusel">
+
+        @for (item of items(); track item.id) {
+          @if (item.type === 'carousel') {
+
+            @for (img of item.images; track img; let i = $index) {
+              <div
+                class="item"
+                [style.transform]="getCarouselTransform(i, item.images.length)"
+              >
+                <img [src]="img" alt="foto" />
+              </div>
+            }
+
+          }
+        }
+
       </div>
-      <div class="card-body">
-        <p>Este es un texto mucho más largo para demostrarte que las cards mantienen el tamaño igual, pedazo de desconfiado. Mirá cómo se estira pero no rompe nada.</p>
-      </div>
+    </div>
+    <p class="content-1">Hemos vivido tantos momentos que prefiero quedarme con las lecciones aprendidas y aprender a cuidarte cada dia mas</p>
+    <p class="content-2">(haz clic en cada foto)</p>
+    <div class="contenedor-cards">
+
+      @for (item of items(); track item.id) {
+        @if (item.type === 'card') {
+
+          <div
+            class="card"
+            [class.abierta]="cardAbiertaId === item.id"
+            (click)="toggleCard(item.id)"
+          >
+            <!-- IMAGEN (del JSON) -->
+            <img
+              class="card__img"
+              [src]="item.images[0]"
+              alt="imagen"
+            />
+
+            <!-- TEXTO (del JSON) -->
+            <div class="card__content">
+              <p class="card__title">
+                {{ item.message?.title }}
+              </p>
+
+              <p class="card__description">
+                {{ item.message?.text }}
+              </p>
+            </div>
+          </div>
+        }
+      }
+
     </div>
 
-    <div class="card-personalizada">
-    <div class="img-container">
-      <img src="https://picsum.photos/200/300?random=11" alt="foto">
-    </div>
-    <div class="card-body">
-      <p>Este es un texto mucho más largo para demostrarte que las cards mantienen el tamaño igual, pedazo de desconfiado. Mirá cómo se estira pero no rompe nada.</p>
-    </div>
+
+  <div class="heart-container" (click)="explodeHearts()">
+    <div class="heart"></div>
   </div>
-  
+
+  <!-- corazones flotantes -->
+  <div class="floating-hearts">
+    @for (h of floatingHearts(); track h.id) {
+      <div
+        class="floating-heart"
+        [style.left.%]="h.x"
+        [style.animationDuration.ms]="h.duration"
+      >
+        ❤️
+      </div>
+    }
   </div>
-</body>
+  <p class="content-1"> Te amo y extraño tanto</p>
+  </body>
+</html>

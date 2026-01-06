@@ -1,6 +1,55 @@
-.navbar{
-  background-color: #D33030;
+.navbar {
+  background: linear-gradient(135deg, #D96C80, #EAB4BB);
+  padding: 12px 16px;
+  border-radius: 0 0 20px 20px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.15);
 }
-.navbar-brand{
-  color: #FFD1D4;
+
+/* Título */
+.navbar-brand {
+  font-family: 'Lovers Quarrel', cursive;
+  font-size: 28px;
+  color: #4E0A0B;
+  margin: 0;
+}
+
+/* Botón hamburguesa */
+.navbar-toggler {
+  border: none;
+  background-color: rgba(255,255,255,0.4);
+  border-radius: 12px;
+  padding: 8px 10px;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+}
+
+/* Icono hamburguesa */
+.navbar-toggler-icon {
+  filter: invert(1);
+}
+
+/* Menú desplegable */
+.navbar-collapse {
+  background-color: #FFD1D4;
+  border-radius: 15px;
+  margin-top: 10px;
+  padding: 10px;
+}
+
+/* Links */
+.nav-link {
+  font-family: 'Fredericka the Great', cursive;
+  font-size: 18px;
+  color: #4E0A0B;
+  text-align: center;
+  padding: 10px;
+  border-radius: 12px;
+}
+
+/* Active */
+.nav-link.active {
+  background-color: #E38792;
+  color: white;
 }

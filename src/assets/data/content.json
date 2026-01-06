@@ -1,0 +1,162 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "type": "card",
+      "message": {
+        "title": "te amo un muchon",
+        "text": "siempre te voy a amar y voy a estar para vos en las buenas y en las malas, quiero aprender mas a cuidarte y quiero seguir creciendo a tu lado"
+      },
+      "images": [
+        "assets/images/card1.webp"
+      ]
+    },
+    {
+      "id": 2,
+      "type": "carousel",
+      "images": [
+        "assets/images/carousel1/img1.webp",
+        "assets/images/carousel1/img2.webp",
+        "assets/images/carousel1/img3.webp",
+        "assets/images/carousel1/img4.webp",
+        "assets/images/carousel1/img5.webp",
+        "assets/images/carousel1/img7.webp",
+        "assets/images/carousel1/img8.webp",
+        "assets/images/carousel1/img9.webp",
+        "assets/images/carousel1/img10.webp"
+      ]
+    },
+    {
+      "id": 3,
+      "type": "card",
+      "message": {
+        "title": "siempre vos",
+        "text": "siempre pero siempre vas a ser mi prioridad en todo te quiero para toda la vida"
+      },
+      "images": [
+        "assets/images/card2.webp"
+      ]
+    },
+    {
+      "id": 4,
+      "type": "card",
+      "message": {
+        "title": "cada momento que compartimos",
+        "text": "es algo de lo que jamas me voy a arrepentir, me hiciste poder sentir lo que es amar y ser amado, yo un ser todo roto y lleno de rencor con el mundo, vos me enseñaste a confiar y a querer de nuevo"
+      },
+      "images": [
+        "assets/images/card3.webp"
+      ]
+    },
+        {
+      "id": 5,
+      "type": "card",
+      "message": {
+        "title": "siempre vas a ser mi mayor tesoro",
+        "text": "mi lugar seguro mi lugar de paz y felcidad, espero poder serlo para vos"
+      },
+      "images": [
+        "assets/images/card4.webp"
+      ]
+    },
+        {
+      "id": 6,
+      "type": "card",
+      "message": {
+        "title": "Te amo tanto",
+        "text": "No te haces una idea lo que llore haciendo esto, espero que te guste mi amor"
+      },
+      "images": [
+        "assets/images/card5.webp"
+      ]
+    },
+        {
+      "id": 7,
+      "type": "card",
+      "message": {
+        "title": "la persona que mas amo y adoro",
+        "text": "siempre lo vas a ser y siempre voy estar orgulloso de vos y de tus ganas de vivir sos una inspiracion para mi y quiero seguir aprendiendo mas de vos"
+      },
+      "images": [
+        "assets/images/card6.webp"
+      ]
+    },
+    {
+      "id": 8,
+      "type": "card",
+      "message": {
+        "title": "una vez escuche a vegeta decir",
+        "text": "no importa el lugar en donde uno quiera vivir, si puedo vivir con la persona que me hace feliz que mas puedo pedir. Siempre tuve esta consideracion vos sos la persona que mas feliz me hizo en esta vida y no me importa muchos los planes de futuro sino que vos estes estes en mis planes"
+      },
+      "images": [
+        "assets/images/card7.webp"
+      ]
+    },
+        {
+      "id": 9,
+      "type": "card",
+      "message": {
+        "title": "sos la mejor pareja y compañera que una persona puede tener",
+        "text": "gracias siempre por todo lo que hiciste por mi y por lo que haces dia a dia, te amo con todo mi corazon"
+      },
+      "images": [
+        "assets/images/card8.webp"
+      ]
+    },
+      {
+      "id": 10,
+      "type": "card",
+      "message": {
+        "title": "si supieras lo que siento a tu lado",
+        "text": "estas en mi cabeza te veo por toods lados, sigo esperandote sigo pensando en buscarte, estar con vos un instante tu eres una obra de arte"
+      },
+      "images": [
+        "assets/images/card9.webp"
+      ]
+    },
+      {
+      "id": 11,
+      "type": "card",
+      "message": {
+        "title": "como no haberte conocido antes",
+        "text": "cuando te miro caigo en ese instante, tu corazon en forma de diamante, eres mi vida mi amor mi todo, por siempre tuyo y tu por siempre mia"
+      },
+      "images": [
+        "assets/images/card10.webp"
+      ]
+    },
+      {
+      "id": 12,
+      "type": "card",
+      "message": {
+        "title": "recuerdo cuando me enamore",
+        "text": "tu simpatica de forma de hablar, de reirte, de curosear, eras una persona tan alegre y no me arrepiento de haberte besado esa noche, de pasar esas noches frias a tu lado porque todo a tu lado es muy bonito"
+      },
+      "images": [
+        "assets/images/card11.webp"
+      ]
+    },
+      {
+      "id": 13,
+      "type": "card",
+      "message": {
+        "title": "sos tan hermosa",
+        "text": "si tan solo pudieras verte con ojos verias que no me equivoco cuando te digo que eres perfecta y la mejor persona que se puede conocer en este mundo"
+      },
+      "images": [
+        "assets/images/card12.webp"
+      ]
+    },
+      {
+      "id": 14,
+      "type": "card",
+      "message": {
+        "title": "te subestima demasiado",
+        "text": "y tus miedos no te dejan ver la verdad, eres una mujer maravillosa, hermosa y gentil no sabes como le agradezco al cielo por haberte conocido gracias por llegar a mi vida"
+      },
+      "images": [
+        "assets/images/card13.webp"
+      ]
+    }
+  ]
+}

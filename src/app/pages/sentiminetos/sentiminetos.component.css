@@ -1,0 +1,57 @@
+.stars-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none; /* no bloquea clicks */
+  z-index: 1;
+}
+
+body, .home-body {
+  background-color: #4E0A0B;
+  color: #F2EEE8;
+  min-height: 100vh;
+  margin: 0;
+  overflow-x: hidden;
+}
+
+/* Kanji decorativo */
+.background-kanji {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 50vw; /* enorme pero responsive */
+  font-family: 'serif';
+  color: rgba(255, 209, 212, 0.08);
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+}
+.page-content {
+  position: relative;
+  z-index: 2;
+}
+.page-wrapper {
+  min-height: 100vh;
+  background-color: #4E0A0B;
+  color: #F2EEE8;
+  overflow-x: hidden;
+}
+
+.titulo {
+  display: flex;
+  justify-content: center;
+  padding: 4rem 1rem;
+}
+
+.text1 {
+  max-width: 720px;        /* clave para lectura */
+  font-size: 1.1rem;
+  line-height: 1.9;
+  text-align: center;      /* o justify si preferís */
+  color: #F2EEE8;
+  font-family: 'Georgia', 'Times New Roman', serif;
+}
