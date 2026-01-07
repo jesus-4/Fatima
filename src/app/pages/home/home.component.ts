@@ -39,6 +39,10 @@ export class HomeComponent implements OnInit {
     {
       title: 'No Te Apartes De Mí.',
       src: 'assets/music/Vicentico Ft. Valeria Bertuccelli - No Te Apartes De Mí. - Rober Lizárraga.mp3'
+    },
+    {
+      title: 'Te amo.',
+      src: 'assets/music/todo va a estar muy muy bien porque te amo.mp3'
     }
   ];
 
