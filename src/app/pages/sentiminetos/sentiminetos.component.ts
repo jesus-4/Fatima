@@ -15,6 +15,12 @@ interface Star {
   size: number;
 }
 
+interface FloatingHeart {
+  id: number;
+  x: number;
+  duration: number;
+}
+
 
 @Component({
   selector: 'app-sentiminetos',
@@ -93,13 +99,50 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
   items = signal<ContentItem[]>([]);
 
   constructor(private http: HttpClient) {}
-  
+
   ngOnInit() {
     this.http
       .get<ContentData>('assets/data/conten2.json')
       .subscribe(data => this.items.set(data.items));
   }
 
+  // anillo
+  showProposal = false;
 
-  
+  onRingTap() {
+    this.showProposal = true;
+  }
+
+  closeProposal() {
+    this.showProposal = false;
+  }
+
+accept() {
+  this.showProposal = false;
+  this.explodeHearts();
+}
+
+floatingHearts = signal<FloatingHeart[]>([]);
+private heartId = 0;
+
+explodeHearts() {
+  const amount = 30;
+
+  const newHearts: FloatingHeart[] = Array.from({ length: amount }).map(() => ({
+    id: this.heartId++,
+    x: Math.random() * 100,
+    duration: 2000 + Math.random() * 2000
+  }));
+
+  this.floatingHearts.update(h => [...h, ...newHearts]);
+
+  setTimeout(() => {
+    this.floatingHearts.set([]);
+  }, 4500);
+}
+
+
+
+
+
 }

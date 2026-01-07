@@ -24,8 +24,8 @@
     </div>
 
     <p class="text1">Lo ultimo que quiero en esta vida es perderte amor mio</p>
-    
-    
+
+
     <p class="text1">sos un show de bellez la mujer mas hermosa que vi en vida de verdad <br> (un recordatorio de lo hermosa que te ves sacado de tu ig :))</p>
 
 
@@ -51,6 +51,40 @@
     <p class="text1">Espero me puedas aceptar como soy :(</p>
     <p class="text1">Espero que me puedas amar :(</p>
     <p class="text1">Te extraño mucho mi amor :(</p>
+
+    <!-- aqui comienza anillo -->
+     <p class="text1">A donde quiero llegar con vos?</p>
+     <p class="text1">quiero que podamos...</p>
+<div class="proposal-wrapper">
+  <div class="ring-touch" (click)="onRingTap()">
+    💍
+  </div>
+
+  @if (showProposal) {
+    <div class="proposal-overlay" (click)="closeProposal()">
+      <div class="proposal-box" (click)="$event.stopPropagation()">
+        <h1>¿Querés casarte conmigo?</h1>
+        <p>Prometo que vas a ser mi compañera en cada momento</p>
+        <button (click)="accept()">Sí 💖</button>
+      </div>
+    </div>
+  }
+
+  <div class="floating-hearts">
+  @for (heart of floatingHearts(); track heart.id) {
+    <span
+      class="heart-float"
+      [style.left.%]="heart.x"
+      [style.animationDuration.ms]="heart.duration"
+    >
+      ❤️
+    </span>
+  }
+</div>
+
+</div>
+
+
 
 
   </div>
