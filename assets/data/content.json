@@ -157,6 +157,29 @@
       "images": [
         "assets/images/card13.webp"
       ]
+    },
+      {
+      "id": 15,
+      "type": "card",
+      "message": {
+        "title": "nada va a ser como antes",
+        "text": "las cosas no volveran a ser como antes, no volvere a dejarte sola con tus sentiminetos, quiero demostrarte que realmente cambie y que veas que soy una persona muy diferente, mas sensible y emocional te amo y quiero que puedas aceptar como soy ahora"
+      },
+      "images": [
+        "assets/images/card14.webp"
+      ]
+    },
+      {
+      "id": 16,
+      "type": "card",
+      "message": {
+        "title": "Ojala",
+        "text": "Ojala la vida nos permita seguir juntos, ojala podamos vivir mil aventuras juntos, ojala podamos cumplir todos nuestros sueños y metas juntos, ojala podamos ser felices juntos por siempre te amo 😭"
+      },
+      "images": [
+        "assets/images/card15.webp"
+      ]
     }
+
   ]
 }
