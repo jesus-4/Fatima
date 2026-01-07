@@ -1,0 +1,29 @@
+{
+  "items": [
+    {
+      "id": 1,
+      "type": "card",
+      "images": ["assets/images/guapa.webp"]
+    },
+    {
+      "id": 2,
+      "type": "card",
+      "images": ["assets/images/guapa2.webp"]
+    },
+    {
+      "id": 3,
+      "type": "card",
+      "images": ["assets/images/guapa3.webp"]
+    },
+    {
+      "id": 4,
+      "type": "card",
+      "images": ["assets/images/guapa4.webp"]
+    },
+    {
+      "id": 5,
+      "type": "card",
+      "images": ["assets/images/guapa5.webp"]
+    }
+  ]
+}

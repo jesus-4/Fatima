@@ -1,10 +1,12 @@
-import { Component, OnDestroy } from '@angular/core';
+import { Component, OnDestroy, OnInit, signal } from '@angular/core';
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
 import {
   AfterViewInit,
   ElementRef,
   ViewChild
 } from '@angular/core';
+import { ContentData, ContentItem } from '../../shared/navbar/model/model';
+import { HttpClient } from '@angular/common/http';
 
 interface Star {
   x: number;
@@ -21,7 +23,7 @@ interface Star {
   templateUrl: './sentiminetos.component.html',
   styleUrl: './sentiminetos.component.css'
 })
-export class SentiminetosComponent implements AfterViewInit, OnDestroy {
+export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
 
   @ViewChild('starsCanvas', { static: true })
   canvasRef!: ElementRef<HTMLCanvasElement>;
@@ -88,4 +90,16 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy {
     this.height = window.innerHeight;
     this.initCanvas();
   };
+  items = signal<ContentItem[]>([]);
+
+  constructor(private http: HttpClient) {}
+  
+  ngOnInit() {
+    this.http
+      .get<ContentData>('assets/data/conten2.json')
+      .subscribe(data => this.items.set(data.items));
+  }
+
+
+  
 }
