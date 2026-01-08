@@ -4,7 +4,7 @@
   left: 0;
   width: 100vw;
   height: 100vh;
-  pointer-events: none; /* no bloquea clicks */
+  pointer-events: none; 
   z-index: 1;
 }
 
@@ -16,13 +16,12 @@ body, .home-body {
   overflow-x: hidden;
 }
 
-/* Kanji decorativo */
 .background-kanji {
   position: fixed;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: 50vw; /* enorme pero responsive */
+  font-size: 50vw;
   font-family: 'serif';
   color: rgba(255, 209, 212, 0.08);
   z-index: 0;
@@ -48,10 +47,10 @@ body, .home-body {
 }
 
 .text1 {
-  max-width: 720px;        /* clave para lectura */
+  max-width: 720px;
   font-size: 1.1rem;
   line-height: 1.9;
-  text-align: center;      /* o justify si preferís */
+  text-align: center;
   color: #F2EEE8;
   font-family: 'Georgia', 'Times New Roman', serif;
 }

@@ -4,7 +4,6 @@
   --radio: 200px;
 }
 
-/* probando */
 
 .titulo {
   text-align: center;
@@ -15,7 +14,6 @@
   font-family: Fredericka the Great;
 }
 
-/* probando */
 
 .escena {
   width: var(--ancho-item);
@@ -49,7 +47,6 @@
   object-fit: cover;
 }
 
-/* Desktop */
 @media (min-width: 768px) {
   :host {
     --ancho-item: 250px;
@@ -63,7 +60,6 @@
   to { transform: rotateY(360deg); }
 }
 
-/* Home / body */
 img {
   display: block;
 }
@@ -74,7 +70,6 @@ img {
   background-color: #FFD1D4;
 }
 
-/* cards */
 .card {
   position: relative;
   width: 300px;
@@ -86,16 +81,14 @@ img {
   background: linear-gradient(-45deg, #f89b29 0%, #ff0f7b 100%);
 }
 
-/* IMAGEN */
 .card__img {
   width: 100%;
   height: 100%;
-  object-fit: contain;   /* no recorta */
+  object-fit: contain;
   background: #000;
   transition: opacity 0.4s ease;
 }
 
-/* CONTENIDO */
 .card__content {
   position: absolute;
   inset: 0;
@@ -112,7 +105,6 @@ img {
   transition: opacity 0.4s ease;
 }
 
-/* ESTADO ABIERTO */
 .card.abierta .card__img {
   opacity: 0;
 }
@@ -121,7 +113,6 @@ img {
   opacity: 1;
 }
 
-/* TEXTO */
 .card__title {
   margin: 0 0 10px;
   font-size: 22px;
@@ -137,11 +128,10 @@ img {
 }
 
 
-/* Corazon */
 .heart-container {
   display: flex;
   justify-content: center;
-  margin-top: 40px; /* ← espacio hacia las cards */
+  margin-top: 40px;
 }
 
 .content-1 {
@@ -216,13 +206,13 @@ body {
 .home-footer {
   padding: 20px 0;
   text-align: center;
-  background-color: transparent; /* o el mismo rosa si querés */
+  background-color: transparent;
 }
 
 html, body {
   width: 100%;
   height: 100%;
-  overflow-x: hidden; /* 👈 CLAVE */
+  overflow-x: hidden;
   background-color: #FFD1D4;
 }
 
