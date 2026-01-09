@@ -2,6 +2,7 @@ import { Component, inject, OnInit, signal, ElementRef, ViewChild } from '@angul
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
 import { HttpClient } from '@angular/common/http';
 import { ContentData, ContentItem } from '../../shared/navbar/model/model';
+import { Router } from '@angular/router';
 
 interface FloatingHeart {
   id: number;
@@ -46,10 +47,11 @@ export class HomeComponent implements OnInit {
     }
   ];
 
-currentSongIndex: number | null = null;
-isPlaying = false;
+  currentSongIndex: number | null = null;
+  isPlaying = false;
 
   cardAbierta = false;
+  private router = inject(Router);
 
   items = signal<ContentItem[]>([]);
 
@@ -59,6 +61,12 @@ isPlaying = false;
     this.http
       .get<ContentData>('assets/data/content.json')
       .subscribe(data => this.items.set(data.items));
+
+    const respuesta = confirm('¿Me amas? 💖');
+
+    if (!respuesta) {
+      this.router.navigateByUrl('/404');
+    }
   }
 
 

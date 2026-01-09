@@ -13,4 +13,8 @@ export const routes: Routes = [
   {
     path: 'sentimientos',
     loadComponent: () => import('./pages/sentiminetos/sentiminetos.component').then(m => m.SentiminetosComponent)},
+  {
+    path: '404',
+    loadComponent: () => import('./pages/no-page/no-page.component').then(m => m.NoPageComponent)
+  },
 ];
