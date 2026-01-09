@@ -62,11 +62,11 @@ export class HomeComponent implements OnInit {
       .get<ContentData>('assets/data/content.json')
       .subscribe(data => this.items.set(data.items));
 
-    const respuesta = confirm('¿Me amas? 💖');
+    // const respuesta = confirm('¿Me amas? 💖');
 
-    if (!respuesta) {
-      this.router.navigateByUrl('/404');
-    }
+    // if (!respuesta) {
+    //   this.router.navigateByUrl('/404');
+    // }
   }
 
 

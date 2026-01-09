@@ -53,3 +53,22 @@
   background-color: #E38792;
   color: white;
 }
+
+.kanji-toggler {
+  font-family: 'Noto Serif JP', 'Playfair Display', serif;
+  font-size: 28px;
+  color: #990000;
+  background: transparent;
+  border: none;
+  padding: 6px 10px;
+  transition: transform 0.3s ease, text-shadow 0.3s ease;
+}
+
+.kanji-toggler:hover {
+  transform: scale(1.15);
+  text-shadow: 0 0 8px rgba(78, 10, 11, 0.5);
+}
+
+.kanji-toggler:focus {
+  box-shadow: none;
+}
