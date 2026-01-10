@@ -1,25 +1,25 @@
 <html>
-  <header class="home-header">
-    <!-- <h2>Nuestros momentos</h2> -->
-    <app-navbar></app-navbar>
-  </header>
+<header class="home-header">
+  <!-- <h2>Nuestros momentos</h2> -->
+  <app-navbar></app-navbar>
+</header>
 
-  <body class="home-body">
-    <div class="titulo">
-      <h1 class="topic">Para mi queria Reina</h1>
-    </div>
+<body class="home-body">
+  <div class="titulo">
+    <h1 class="topic">Para mi querida Reina</h1>
+  </div>
 
-    <div class="music-player">
-  <p class="music-title">🎶 Elegí una canción</p>
+  <div class="music-player">
+    <p class="music-title">🎶 Elegí una canción</p>
 
-  <!-- musica -->
-  <ul class="music-list">
-    @for (song of songs; track song; let i = $index) {
-      <li
+    <!-- musica -->
+    <ul class="music-list">
+      @for (song of songs; track song; let i = $index) {
+        <li
         class="music-item"
         [class.active]="currentSongIndex === i"
         (click)="playSong(i)"
-      >
+        >
         <span class="song-name">{{ song.title }}</span>
         <span class="icon">
           {{ currentSongIndex === i && isPlaying ? '⏸' : '▶' }}
@@ -30,89 +30,89 @@
 
   <audio #audioRef></audio>
 </div>
-  <p class="content-1"> quiero que siempre descanses sabiendo que eres la mujer mas amada, deseada, admirada por un chico que te ama con todo su corazon <3  <br> siempre voy a ser tu fan numero 1</p>
+<p class="content-1"> quiero que siempre descanses sabiendo que eres la mujer mas amada, deseada, admirada por un chico que te ama con todo su corazon <3  <br> siempre voy a ser tu fan numero 1</p>
 
 
-    <!-- Carrusel  -->
-    <div class="escena">
-      <div class="carrusel">
-
-        @for (item of items(); track item.id) {
-          @if (item.type === 'carousel') {
-
-            @for (img of item.images; track img; let i = $index) {
-              <div
-                class="item"
-                [style.transform]="getCarouselTransform(i, item.images.length)"
-              >
-                <img [src]="img" alt="foto" />
-              </div>
-            }
-
-          }
-        }
-
-      </div>
-    </div>
-    <p class="content-1">Hemos vivido tantos momentos que prefiero quedarme con las lecciones aprendidas y aprender a cuidarte cada dia mas</p>
-    <p class="content-2">(haz clic en cada foto)</p>
-
-    <!-- tarjetas -->
-    <div class="contenedor-cards">
+  <!-- Carrusel  -->
+  <div class="escena">
+    <div class="carrusel">
 
       @for (item of items(); track item.id) {
-        @if (item.type === 'card') {
+        @if (item.type === 'carousel') {
 
-          <div
-            class="card"
-            [class.abierta]="cardAbiertaId === item.id"
-            (click)="toggleCard(item.id)"
-          >
-            <!-- IMAGEN (del JSON) -->
-            <img
-              class="card__img"
-              [src]="item.images[0]"
-              alt="imagen"
-            />
-
-            <!-- TEXTO (del JSON) -->
-            <div class="card__content">
-              <p class="card__title">
-                {{ item.message?.title }}
-              </p>
-
-              <p class="card__description">
-                {{ item.message?.text }}
-              </p>
-            </div>
+          @for (img of item.images; track img; let i = $index) {
+            <div
+            class="item"
+            [style.transform]="getCarouselTransform(i, item.images.length)"
+            >
+            <img [src]="img" alt="foto" />
           </div>
         }
+
       }
-
-    </div>
-
-
-  <div class="heart-container" (click)="explodeHearts()">
-    <div class="heart"></div>
-  </div>
-
-  <!-- corazones flotantes -->
-  <div class="floating-hearts">
-    @for (h of floatingHearts(); track h.id) {
-      <div
-        class="floating-heart"
-        [style.left.%]="h.x"
-        [style.animationDuration.ms]="h.duration"
-      >
-        ❤️
-      </div>
     }
-  </div>
 
-  <p class="content-1"> No necesito mil amores, tengo fe en uno que vale miles y ese amor sos vos <Br> Quiero estar junto a vos </p>
+  </div>
+</div>
+<p class="content-1">Hemos vivido tantos momentos que prefiero quedarme con las lecciones aprendidas y aprender a cuidarte cada dia mas</p>
+<p class="content-2">(haz clic en cada foto)</p>
+
+<!-- tarjetas -->
+<div class="contenedor-cards">
+
+  @for (item of items(); track item.id) {
+    @if (item.type === 'card') {
+
+      <div
+      class="card"
+      [class.abierta]="cardAbiertaId === item.id"
+      (click)="toggleCard(item.id)"
+      >
+      <!-- IMAGEN (del JSON) -->
+      <img
+      class="card__img"
+      [src]="item.images[0]"
+      alt="imagen"
+      />
+
+      <!-- TEXTO (del JSON) -->
+      <div class="card__content">
+        <p class="card__title">
+          {{ item.message?.title }}
+        </p>
+
+        <p class="card__description">
+          {{ item.message?.text }}
+        </p>
+      </div>
+    </div>
+  }
+}
+
+</div>
+
+
+<div class="heart-container" (click)="explodeHearts()">
+  <div class="heart"></div>
+</div>
+
+<!-- corazones flotantes -->
+<div class="floating-hearts">
+  @for (h of floatingHearts(); track h.id) {
+    <div
+    class="floating-heart"
+    [style.left.%]="h.x"
+    [style.animationDuration.ms]="h.duration"
+    >
+    ❤️
+  </div>
+}
+</div>
+
+<p class="content-1"> No necesito mil amores, tengo fe en uno que vale miles y ese amor sos vos <Br> Quiero estar junto a vos </p>
   <img src="assets/images/fantasmita.jpg" alt="fan1">
 
   <p class="content-1"> Te amo y extraño tanto </p>
   <p class="content-1"> Quiero estar aqui por ti porque te amo</p>
-  </body>
+</body>
 </html>
