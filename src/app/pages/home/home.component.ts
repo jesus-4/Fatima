@@ -131,5 +131,10 @@ pauseSong() {
   this.audioRef.nativeElement.pause();
   this.isPlaying = false;
 }
+//flork
+loveOpen = false;
 
+toggleLoveCard() {
+  this.loveOpen = !this.loveOpen;
+}
 }

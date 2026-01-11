@@ -309,3 +309,97 @@ html, body {
 .icon {
   font-size: 18px;
 }
+/* flork */.love-wrapper {
+  perspective: 1200px;
+  width: 240px;
+  margin: 40px auto;
+}
+
+.love-envelope {
+  position: relative;
+  width: 240px;
+  height: 130px;
+  transform-style: preserve-3d;
+  transition: all 0.9s ease;
+}
+
+.love-front,
+.love-inside {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+}
+
+/* cerrado */
+.love-front {
+  background: #000;
+}
+
+/* corazón */
+.heart-shape {
+  width: 45px;
+  height: 45px;
+  background: #ff4d6d;
+  transform: rotate(-45deg);
+  position: relative;
+}
+.heart-shape::before,
+.heart-shape::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  background: #ff4d6d;
+  border-radius: 50%;
+}
+.heart-shape::before {
+  top: -22px; left: 0;
+}
+.heart-shape::after {
+  left: 22px; top: 0;
+}
+
+/* interior */
+.love-inside {
+  background: #000;
+  color: #fff;
+  transform: rotateX(-180deg);
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 12px;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* imagen más grande */
+.flork-img {
+  max-width: 95%;
+  max-height: 150px;
+  object-fit: contain;
+}
+
+/* texto abajo */
+.love-inside p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  padding-bottom: 8px;
+}
+
+/* abierto */
+.love-envelope.open {
+  height: 260px;
+}
+
+.love-envelope.open .love-front {
+  transform: rotateX(180deg);
+  transform-origin: top;
+}
+
+.love-envelope.open .love-inside {
+  transform: rotateX(0deg);
+}

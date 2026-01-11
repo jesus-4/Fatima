@@ -9,6 +9,7 @@
     <h1 class="topic">Para mi querida Reina</h1>
   </div>
 
+
   <div class="music-player">
     <p class="music-title">🎶 Elegí una canción</p>
 
@@ -56,6 +57,23 @@
 </div>
 <p class="content-1">Hemos vivido tantos momentos que prefiero quedarme con las lecciones aprendidas y aprender a cuidarte cada dia mas</p>
 <p class="content-2">(haz clic en cada foto)</p>
+
+<div class="love-wrapper" (click)="toggleLoveCard()">
+  <div class="love-envelope" [class.open]="loveOpen">
+
+    <div class="love-front">
+      <div class="heart-shape"></div>
+    </div>
+
+    <div class="love-inside">
+      <img src="assets/images/flork4.jpg" class="flork-img">
+      <p>Te amo 💖</p>
+    </div>
+
+  </div>
+</div>
+
+
 
 <!-- tarjetas -->
 <div class="contenedor-cards">
