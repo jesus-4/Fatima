@@ -3,6 +3,7 @@ import { NavbarComponent } from "../../shared/navbar/navbar.component";
 import { HttpClient } from '@angular/common/http';
 import { ContentData, ContentItem } from '../../shared/navbar/model/model';
 import { Router } from '@angular/router';
+import { CommonModule } from '@angular/common';
 
 interface FloatingHeart {
   id: number;
@@ -12,7 +13,7 @@ interface FloatingHeart {
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent],
+  imports: [NavbarComponent, CommonModule],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
@@ -34,12 +35,16 @@ export class HomeComponent implements OnInit {
       src: 'assets/music/Julieta Venegas - Limon Y Sal.mp3'
     },
     {
-      title: 'Theme From New York, New York',
-      src: 'assets/music/Theme From New York, New York (2008 Remastered) - Frank Sinatra.mp3'
+      title: 'Mon Laferte - Si Tu Me Quisieras ',
+      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras .mp3'
     },
     {
       title: 'No Te Apartes De Mí.',
       src: 'assets/music/Vicentico Ft. Valeria Bertuccelli - No Te Apartes De Mí. - Rober Lizárraga.mp3'
+    },
+    {
+      title: 'Si Tu Me Quisieras',
+      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras.mp3'
     },
     {
       title: 'Te amo.',
@@ -61,19 +66,29 @@ export class HomeComponent implements OnInit {
     this.http
       .get<ContentData>('assets/data/content.json')
       .subscribe(data => this.items.set(data.items));
+  }
 
-    // const respuesta = confirm('¿Me amas? 💖');
+  started = false;
 
-    // if (!respuesta) {
-    //   this.router.navigateByUrl('/404');
-    // }
+  startExperience(answer: boolean) {
+    if (!answer) {
+      this.playSong(5);
+      return;
+    }
+
+    this.started = true;
+
+    // Ahora sí — esto ocurre en un click real
+    this.playSong(5);
   }
 
 
+
+
   getCarouselTransform(index: number, total: number): string {
-  const angle = 360 / total;
-  return `rotateY(${index * angle}deg) translateZ(var(--radio))`;
-}
+    const angle = 360 / total;
+    return `rotateY(${index * angle}deg) translateZ(var(--radio))`;
+  }
   cardAbiertaId: number | null = null;
 
   toggleCard(id: number) {
