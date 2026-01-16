@@ -404,14 +404,6 @@ html, body {
   transform: rotateX(0deg);
 }
 
-
-
-
-
-
-
-
-
 .start-overlay {
   position: fixed;
   inset: 0;
@@ -429,6 +421,11 @@ html, body {
   text-align: center;
   font-size: 20px;
 }
+
+.start-box p {
+  white-space: pre-line;
+}
+
 .start-box button {
   margin: 10px;
   padding: 8px 16px;
