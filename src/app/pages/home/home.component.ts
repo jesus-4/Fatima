@@ -164,21 +164,21 @@ setStartMessage() {
   // 16 de junio → aniversario
   if (day === 16 && month === 6) {
     this.startMessage = '💍 Feliz aniversario, amor de mi vida 💖\n\n' +
-    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia';
+    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia te amo con todo mi ser';
     return;
   }
 
   // 16 de cualquier mes → cumple mes
   if (day === 16) {
     this.startMessage = '💞 Feliz cumple mes mi amor 💞 \n\n' +
-    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia';
+    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia te amo con todo mi ser';
     return;
   }
 
   // mensaje normal cualquier otro día
   this.startMessage =
     'Te extraño mucho todo el tiempo, me muero por verte :( \n\n' +
-    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia';
+    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia te amo con todo mi ser';
 }
 
 
