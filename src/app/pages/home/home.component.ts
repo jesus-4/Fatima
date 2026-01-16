@@ -43,10 +43,6 @@ export class HomeComponent implements OnInit {
       src: 'assets/music/Vicentico Ft. Valeria Bertuccelli - No Te Apartes De Mí. - Rober Lizárraga.mp3'
     },
     {
-      title: 'Si Tu Me Quisieras',
-      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras.mp3'
-    },
-    {
       title: 'Te amo.',
       src: 'assets/music/todo va a estar muy muy bien porque te amo.mp3'
     }
@@ -63,9 +59,12 @@ export class HomeComponent implements OnInit {
   constructor(private http: HttpClient) {}
 
   ngOnInit() {
-    this.http
-      .get<ContentData>('assets/data/content.json')
-      .subscribe(data => this.items.set(data.items));
+
+  this.setStartMessage();
+
+  this.http
+    .get<ContentData>('assets/data/content.json')
+    .subscribe(data => this.items.set(data.items));
   }
 
   started = false;
@@ -152,4 +151,33 @@ loveOpen = false;
 toggleLoveCard() {
   this.loveOpen = !this.loveOpen;
 }
+
+
+startMessage = '';
+
+
+setStartMessage() {
+  const today = new Date();
+  const day = today.getDate();
+  const month = today.getMonth() + 1; // Enero = 0
+
+  // 16 de junio → aniversario
+  if (day === 16 && month === 6) {
+    this.startMessage = '💍 Feliz aniversario, amor de mi vida 💖';
+    return;
+  }
+
+  // 16 de cualquier mes → cumple mes
+  if (day === 16) {
+    this.startMessage = '💞 Feliz cumple mes mi amor 💞';
+    return;
+  }
+
+  // mensaje normal cualquier otro día
+  this.startMessage =
+    'Te extraño mucho todo el tiempo, me muero por verte :( \n\n' +
+    'Espero que el tiempo te ayude y que sigas visitando la página';
+}
+
+
 }

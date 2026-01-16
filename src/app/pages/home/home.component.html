@@ -6,10 +6,11 @@
 
 <div class="start-overlay" *ngIf="!started">
   <div class="start-box">
-    <p>Te extraño mucho todo el tiempo, me muero por verte :( <br><br> espero que el tiempo te ayude y que sigas visitando la pagina</p>
+    <p>{{ startMessage }}</p>
     <button (click)="startExperience(true)">Aceptar</button>
   </div>
 </div>
+
 
 
 <body class="home-body">
