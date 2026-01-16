@@ -35,12 +35,16 @@ export class HomeComponent implements OnInit {
       src: 'assets/music/Julieta Venegas - Limon Y Sal.mp3'
     },
     {
-      title: 'Mon Laferte - Si Tu Me Quisieras ',
+      title: 'Si Tu Me Quisieras ',
       src: 'assets/music/Mon Laferte - Si Tu Me Quisieras .mp3'
     },
     {
       title: 'No Te Apartes De Mí.',
       src: 'assets/music/Vicentico Ft. Valeria Bertuccelli - No Te Apartes De Mí. - Rober Lizárraga.mp3'
+    },
+    {
+      title: 'Si no estas.',
+      src: 'assets/music/iñigo quintero - Si No Estás (Letra Oficial) - iñigo quintero.mp3'
     },
     {
       title: 'Te amo.',
@@ -70,15 +74,8 @@ export class HomeComponent implements OnInit {
   started = false;
 
   startExperience(answer: boolean) {
-    if (!answer) {
-      this.playSong(5);
-      return;
-    }
-
     this.started = true;
-
-    // Ahora sí — esto ocurre en un click real
-    this.playSong(5);
+    this.playSongSegment(5, 133, 35);
   }
 
 
@@ -121,30 +118,51 @@ export class HomeComponent implements OnInit {
   playSong(index: number) {
     const audio = this.audioRef.nativeElement;
 
-  // misma canción → play / pause
-  if (this.currentSongIndex === index) {
-    if (this.isPlaying) {
-      audio.pause();
-      this.isPlaying = false;
-    } else {
-      audio.play();
-      this.isPlaying = true;
+    // misma canción → play / pause
+    if (this.currentSongIndex === index) {
+      if (this.isPlaying) {
+        audio.pause();
+        this.isPlaying = false;
+      } else {
+        audio.play();
+        this.isPlaying = true;
+      }
+      return;
     }
-    return;
+
+    // canción distinta
+    this.currentSongIndex = index;
+    audio.src = this.songs[index].src;
+    audio.load();
+    audio.play();
+    this.isPlaying = true;
   }
 
-  // canción distinta
+  pauseSong() {
+    this.audioRef.nativeElement.pause();
+    this.isPlaying = false;
+  }
+
+playSongSegment(index: number, startAt: number, duration: number) {
+  const audio = this.audioRef.nativeElement;
+
   this.currentSongIndex = index;
   audio.src = this.songs[index].src;
   audio.load();
-  audio.play();
-  this.isPlaying = true;
+
+  audio.onloadedmetadata = () => {
+    audio.currentTime = startAt; // segundo donde empieza
+    audio.play();
+    this.isPlaying = true;
+
+    // detener luego de X segundos
+    setTimeout(() => {
+      audio.pause();
+      this.isPlaying = false;
+    }, duration * 1000);
+  };
 }
 
-pauseSong() {
-  this.audioRef.nativeElement.pause();
-  this.isPlaying = false;
-}
 //flork
 loveOpen = false;
 
