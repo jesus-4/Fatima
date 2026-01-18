@@ -1,0 +1,224 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  image-rendering: pixelated;
+}
+
+/* ===== CONTENEDOR GENERAL ===== */
+
+.bee-wrapper {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  transform: translateX(-50%) scale(var(--s, 0.35));
+  transform-origin: top center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Abeja que orbita (más adelante la usaremos) */
+.bee-wrapper.orbit {
+  left: 50%;
+  top: 50%;
+  transform-origin: -160px 80px;
+  animation: orbit 12s linear infinite;
+  z-index: 3;
+}
+
+/* ===== ESCENA ===== */
+
+.scene {
+  height: 0;
+  overflow: visible;
+
+  perspective: 700px;
+  transform-style: preserve-3d;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ===== ABEJA ===== */
+
+.bee {
+  width: 400px;
+  height: 400px;
+  position: relative;
+  transform-style: preserve-3d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-origin: top;
+  bottom: -10px;
+}
+
+.bee.fly {
+  animation: shake 8s linear infinite;
+}
+
+.bee.static {
+  animation: none;
+}
+
+.bee.spin {
+  animation: shake 8s linear infinite;
+}
+
+
+.bee_face {
+  position: absolute;
+  width: 280px;
+  height: 200px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  filter: saturate(1.2);
+}
+
+.bee_face.top {
+  transform: translateY(-100px) rotateX(90deg) rotateZ(90deg);
+}
+.bee_face.bottom {
+  transform: translateY(100px) rotateX(90deg) rotateZ(90deg);
+}
+.bee_face.right {
+  transform: translateX(100px) rotateY(90deg);
+}
+.bee_face.left {
+  transform: translateX(-100px) rotateY(-90deg);
+}
+.bee_face.front {
+  transform: translateZ(140px);
+  width: 200px;
+  height: 200px;
+}
+.bee_face.back {
+  transform: translateZ(-140px) rotateY(-180deg);
+  width: 200px;
+  height: 200px;
+}
+
+/* ===== ANTENAS ===== */
+
+.antenna {
+  position: absolute;
+  width: 70px;
+  height: 55px;
+}
+.antenna_right {
+  transform: translate3d(50px, -71px, 170px) rotateY(90deg);
+}
+.antenna_left {
+  transform: translate3d(-50px, -71px, 170px) rotateY(90deg);
+}
+
+/* ===== PATAS ===== */
+
+.leg {
+  position: absolute;
+  width: 30px;
+  height: 50px;
+}
+.leg_right_one { transform: translate3d(50px, 125px, -30px) rotateX(-10deg); }
+.leg_right_two { transform: translate3d(50px, 125px, 30px) rotateX(-10deg); }
+.leg_right_three { transform: translate3d(50px, 125px, 90px) rotateX(-10deg); }
+
+.leg_left_one { transform: translate3d(-50px, 125px, -30px) rotateX(-10deg); }
+.leg_left_two { transform: translate3d(-50px, 125px, 30px) rotateX(-10deg); }
+.leg_left_three { transform: translate3d(-50px, 125px, 90px) rotateX(-10deg); }
+
+/* ===== ALAS ===== */
+
+.wing {
+  width: 300px;
+  height: 200px;
+}
+
+.wing_left {
+  transform-origin: top right;
+  transform: translate3d(-150px, -1px, 130px)
+             rotateY(90deg) rotateX(90deg)
+             scale3d(-1, 1, 1);
+  animation: fly_left 120ms infinite linear;
+}
+
+.wing_right {
+  transform-origin: top left;
+  transform: translate3d(150px, -1px, -65px)
+             rotateY(90deg) rotateX(90deg)
+             scale3d(-1, -1, 1);
+  animation: fly_right 120ms infinite linear;
+}
+
+
+
+.bee-wrapper.orbit {
+  position: absolute;
+  top: -80px;
+  left: 50%;
+  transform-origin: center 140px;
+  animation: orbitHorizontal 14s linear infinite;
+}
+
+@keyframes orbitHorizontal {
+  from {
+    transform: rotateY(0deg) translateX(260px) scale(var(--s));
+  }
+  to {
+    transform: rotateY(360deg) translateX(260px) scale(var(--s));
+  }
+}
+
+@keyframes orbitPath {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+
+/* ===== ANIMACIONES ===== */
+
+@keyframes shake {
+  0%   { transform: translateY(100px); }
+  50%  { transform: translateY(110px); }
+  100% { transform: translateY(100px); }
+}
+
+
+@keyframes fly_right {
+  0%,100% {
+    transform: translate3d(150px, -1px, -65px)
+               rotateY(90deg) rotateX(90deg)
+               scale3d(-1, -1, 1);
+  }
+  50% {
+    transform: translate3d(150px, -1px, -65px)
+               rotateY(90deg) rotateX(30deg)
+               scale3d(-1, -1, 1);
+  }
+}
+
+@keyframes fly_left {
+  0%,100% {
+    transform: translate3d(-150px, -1px, 130px)
+               rotateY(90deg) rotateX(90deg)
+               scale3d(-1, 1, 1);
+  }
+  50% {
+    transform: translate3d(-150px, -1px, 130px)
+               rotateY(90deg) rotateX(160deg)
+               scale3d(-1, 1, 1);
+  }
+}
+
+/* ===== ORBITA (para después) ===== */
+
+@keyframes orbit {
+  from { transform: rotate(0deg) scale(var(--s,0.35)); }
+  to   { transform: rotate(360deg) scale(var(--s,0.35)); }
+}

@@ -1,0 +1,46 @@
+
+
+<div class="bee-wrapper" style="--s:0.65; left:5%; top:15%;">
+  <div class="scene">
+    <div class="bee">
+
+    <!-- Alas -->
+    <img class="wing wing_right" src="assets/images/minecraft/wing.png">
+    <img class="wing wing_left"  src="assets/images/minecraft/wing.png">
+
+    <!-- Antenas -->
+    <img class="antenna antenna_right" src="assets/images/minecraft/antenna.png">
+    <img class="antenna antenna_left"  src="assets/images/minecraft/antenna.png">
+
+    <!-- Caras del cuerpo -->
+    <img class="bee_face front"  src="assets/images/minecraft/front.png">
+    <img class="bee_face back"   src="assets/images/minecraft/back.png">
+    <img class="bee_face right"  src="assets/images/minecraft/right.png">
+    <img class="bee_face left"   src="assets/images/minecraft/left.png">
+    <img class="bee_face top"    src="assets/images/minecraft/top.png">
+    <img class="bee_face bottom" src="assets/images/minecraft/bottom.png">
+
+    <!-- Patas -->
+    <img class="leg leg_right leg_right_one" src="assets/images/minecraft/leg.png">
+    <img class="leg leg_right leg_right_two" src="assets/images/minecraft/leg.png">
+    <img class="leg leg_right leg_right_three" src="assets/images/minecraft/leg.png">
+
+    <img class="leg leg_left leg_left_one" src="assets/images/minecraft/leg.png">
+    <img class="leg leg_left leg_left_two" src="assets/images/minecraft/leg.png">
+    <img class="leg leg_left leg_left_three" src="assets/images/minecraft/leg.png">
+  </div>
+
+    <script>
+        let windowHeight = window.innerHeight;
+        const adjust = () => {
+        windowHeight = window.innerHeight;
+          if (windowHeight < 800) {
+            document.documentElement.style.setProperty('--bee-scale', 0.18);
+          } else {
+            document.documentElement.style.setProperty('--bee-scale', 0.25);
+          }
+
+        };
+        window.addEventListener('resize', adjust);
+        adjust();
+    </script>

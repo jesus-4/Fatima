@@ -4,6 +4,7 @@ import { HttpClient } from '@angular/common/http';
 import { ContentData, ContentItem } from '../../shared/navbar/model/model';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { AbejaComponent } from "../abeja/abeja.component";
 
 interface FloatingHeart {
   id: number;
@@ -13,7 +14,7 @@ interface FloatingHeart {
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, CommonModule],
+  imports: [NavbarComponent, CommonModule, AbejaComponent],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'

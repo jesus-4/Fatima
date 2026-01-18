@@ -435,3 +435,19 @@ html, body {
   color: white;
   font-size: 16px;
 }
+
+/* ===== Fondo de abejas ===== */
+.bee-background {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.bee-wrapper {
+  position: absolute;
+  transform: translate(-50%, -50%) scale(var(--s));
+  transform-origin: top center;
+  pointer-events: none;
+}
+
