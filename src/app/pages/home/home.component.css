@@ -451,3 +451,17 @@ html, body {
   pointer-events: none;
 }
 
+.home-body {
+  background-color: #ffd6e5; /* rosa base */
+
+  background-image: url("assets/images/coal.png");
+  background-repeat: repeat;
+  background-size: 120px; /* tamaño del bloque */
+
+  /* Recolorea la textura */
+  filter:
+    brightness(1.1)
+    contrast(0.9)
+    hue-rotate(310deg)
+    saturate(1.4);
+}
