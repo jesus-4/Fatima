@@ -76,7 +76,8 @@ export class HomeComponent implements OnInit {
 
   startExperience(answer: boolean) {
     this.started = true;
-    this.playSongSegment(5, 133, 50);
+    // this.playSongSegment(5, 133, 50);
+    this.playSongSegment(5, 0, 50);
   }
 
 
@@ -148,7 +149,8 @@ playSongSegment(index: number, startAt: number, duration: number) {
   const audio = this.audioRef.nativeElement;
 
   this.currentSongIndex = index;
-  audio.src = this.songs[index].src;
+  // audio.src = this.songs[index].src;
+  audio.src = "assets/music/3AM - Una Rosa (Letra) - 3AM.mp3";
   audio.load();
 
   audio.onloadedmetadata = () => {
