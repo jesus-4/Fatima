@@ -299,6 +299,7 @@ html, body {
   font-weight: bold;
 }
 
+
 .song-name {
   font-family: 'Libre Baskerville', serif;
   font-size: 1rem;
@@ -464,3 +465,11 @@ html, body {
     hue-rotate(310deg)
     saturate(1.4);
 } */
+
+.heart-wrapper {
+  width: 320px;
+  height: 280px;
+  position: relative;
+  left: -55px;
+  top: -225px;
+}

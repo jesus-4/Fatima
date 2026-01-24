@@ -1,0 +1,19 @@
+:host {
+  position: relative;
+  display: block;
+}
+
+
+.hearth-container{
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+.love-word {
+  position: absolute;
+  font-size: 18px;
+  font-weight: 600;
+  color: #990000; /* cambia según quieras */
+  white-space: nowrap;
+  text-shadow: 0 0 6px rgba(255,255,255,0.7);
+}

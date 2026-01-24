@@ -5,6 +5,7 @@ import { ContentData, ContentItem } from '../../shared/navbar/model/model';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AbejaComponent } from "../abeja/abeja.component";
+import { CorazonComponent } from "../corazon/corazon.component";
 
 interface FloatingHeart {
   id: number;
@@ -14,7 +15,7 @@ interface FloatingHeart {
 
 @Component({
   selector: 'app-home',
-  imports: [NavbarComponent, CommonModule, AbejaComponent],
+  imports: [NavbarComponent, CommonModule, AbejaComponent, CorazonComponent],
   standalone: true,
   templateUrl: './home.component.html',
   styleUrl: './home.component.css'
