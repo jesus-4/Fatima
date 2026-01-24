@@ -150,7 +150,7 @@ playSongSegment(index: number, startAt: number, duration: number) {
 
   this.currentSongIndex = index;
   // audio.src = this.songs[index].src;
-  audio.src = "assets/music/3AM - Una Rosa (Letra) - 3AM.mp3";
+  audio.src = "assets/music/Rata Blanca - Mujer Amante (Letra).mp3";
   audio.load();
 
   audio.onloadedmetadata = () => {
@@ -185,7 +185,8 @@ setStartMessage() {
   // 16 de junio → aniversario
   if (day === 16 && month === 6) {
     this.startMessage = '💍 Feliz aniversario, amor de mi vida 💖\n\n' +
-    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia.'+'\n\n sueño con un futuro con vos \n uno lleno de sonrisas y risas \n bailando en la cocina \n cantando en la ruta \n viviendo la vida juntos \n\n te amo con todo mi ser';
+    'no te haces una idea de lo importante que sos para mi te amo con todo lo que soy 😞'
+    // 'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia.'+'\n\n sueño con un futuro con vos \n uno lleno de sonrisas y risas \n bailando en la cocina \n cantando en la ruta \n viviendo la vida juntos \n\n te amo con todo mi ser';
     return;
   }
 
@@ -198,8 +199,8 @@ setStartMessage() {
 
   // mensaje normal cualquier otro día
   this.startMessage =
-    'Te extraño mucho todo el tiempo, me muero por verte :( \n\n' +
-    'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia.'+'\n\n sueño con un futuro con vos \n uno lleno de sonrisas y risas \n bailando en la cocina \n cantando en la ruta \n viviendo la vida juntos \n\n te amo con todo mi ser';
+    'Te extraño mucho todo el tiempo, me muero por verte :( \n\n'
+    // 'No estas sola, no tenes que sentirte sola, ni hacer las cosas sola si no queres, yo siempre voy a estar aunque no sea la mejor opcion. Nunca te voy a negar mi ayuda y mi presencia.'+'\n\n sueño con un futuro con vos \n uno lleno de sonrisas y risas \n bailando en la cocina \n cantando en la ruta \n viviendo la vida juntos \n\n te amo con todo mi ser';
 }
 
 
