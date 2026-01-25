@@ -98,16 +98,11 @@ import{a as E}from"./chunk-GW7PPLHE.js";import{f as O,g as z,h as S,m as k}from"
       todo esto lo cuento desde lo que siento yo, se que vos tenes tus sentimientos tambien y tus formas de ver las cosas, no te estoy minimizando ni mucho menos solo
       te cuento desde mi lado como se sienten las cosas, no quiero que te enojes ni lo mal interpretes porfavor!!!
 
-      vos me dijiste que queres que siga subinedo a la pagina para saber que no cambio y lo entiendo tampoco es que lo iba a dejar de hacer
-      porque aunque no hablemos siento que me lees y me di cuenta que si lo haces me gustas mucho pero como te dije si sentis que yo ya no voy mas para tu vida
-      toma la desicion y avisame...
-
       vos vas a poder estar al tanto de mi y de todo lo que te digo pero yo no de vos jaja eso me parece un poco injsto pero bueno que se yo
 
       yo tambien estoy recontra inseguro con algunos temas... y queria ayudarte a combatir tu inseguridad pero ya no se que pensar
 
       me parece bien que te quieras enfocar en vos ahora, pero no entiendo porque me tenes que hacer a un lado
-
 
       seguramente debo tener algun problema psicologico, es en lo unico que vengo pensando
       desde que nos vimos la ultima vez, no se sera el miedo al abandono o algo relacionado
@@ -117,7 +112,6 @@ import{a as E}from"./chunk-GW7PPLHE.js";import{f as O,g as z,h as S,m as k}from"
       porque siento que me hablas por lastima y me hace sentir mal tener pensar en eso pero bueno ayer me hablaste porque te dije que me sentia mal o eso senti
       me saque la foto con vos porque siento que eso te puede ayudar mas a lo que vos necesitas
       pero a mi me gusta tener fotos con vos :(
-
 
       dejando de lado los problemas que tengo con mi cabeza.
 
