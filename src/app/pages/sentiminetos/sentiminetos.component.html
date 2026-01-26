@@ -7,6 +7,46 @@
     <div class="page-content">
       <canvas #starsCanvas class="stars-canvas"></canvas>
 
+
+
+
+      <div class="diario-container">
+
+  <div class="diario-card"
+       *ngFor="let entry of entries"
+       (click)="entry.abierto = !entry.abierto">
+
+    <!-- Cabecera -->
+    <div class="diario-header">
+      <span class="diario-fecha">{{ entry.fecha }}</span>
+      <span class="diario-titulo">{{ entry.titulo }}</span>
+      <span class="diario-icon">
+        {{ entry.abierto ? '−' : '+' }}
+      </span>
+    </div>
+
+    <!-- Contenido -->
+    <div class="diario-body" [class.abierto]="entry.abierto">
+
+      <p [innerHTML]="entry.texto"
+          (click)="$event.stopPropagation()"></p>
+
+
+
+      <div class="diario-imagenes" *ngIf="entry.imagenes?.length">
+        <a *ngFor="let img of entry.imagenes"
+           [href]="img" target="_blank">
+          📷 Ver imagen
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
     <!-- <div class="titulo">
       <p class="text1">
         No siempre estoy bien<br><br>
@@ -64,7 +104,7 @@
 
     <p class="text1">yo escribo esto aca porque es un lugar donde me puedo desahogar sin llenarte de mensajes el chat, quiero que me extrañes y me ames no quiero seguir haciendote enojar mas pero bueno trato de no sufrirte tanto spoiler lloro todo el tiempo pero segun yo voy mejorando, tengo mis inseguridades que me da miedo decirte, me dio pena contarte mi pasado, no se siento que no soy lo suficientemente fuerte pero me gusto que me escucharas en ese momento ahora me quede sin nadie con quien hablar es una pelea contra mi cabeza que de momento voy ganando vere en los proximos 4 meses jajaja ay dios que hago escribiendo esto aca <br><br>en fin no se si vas a ver esto en algun momento pero que sepas que te amo enserio y mucho, espero que el tiempo nos cuido bien a los dos y que todo salga bien, te amo</p>
     <p class="text1"><br><br> tenia muchos planes para que hagamos durante tu semana de vacaciones, pero todo quedo en nada, me siento mal porque siento que te arruine las vacaciones nomas, vos mereces ser feliz y yo me quiero esforzar para ser la persona que te haga feliz, yo solo espero que estes bien, yo te voy a seguir amando eso seguro </p> -->
-    <p class="text1"><br><br>
+    <!-- <p class="text1"><br><br>
       Feliz 16 de este mes de enero <br>
       te amo mucho no puedo dejar de extrañarte ni de pensarte <br>
       te extraño y te amo tanto mi amor
@@ -85,14 +125,14 @@
 
       <br><br><br>
 
-      ultima actualizacion: 22/1/2026 22:00 hs <br>
+      ultima actualizacion: 22/1/2026 22:00 hs <br> -->
       <!-- te compre hoy cosas hoy aunque me dijiste que no te compre nada lo compre pero no para condicionar nada ni nada de eso, te lo compre porque me hacia ilusion comprarte esas cosas y espero
       que te gusten mucho. La taza fue re dificil conseguirla porque resulta que es una edicion limitada y no existen practicamente
       pero bueno la consegui y me hace ilusion porque se que te va a gustar, los broches como que no cuentan porque me ayudaste
       a elegirlos jaja pero bueno te compre algunos y la cadena elegi esa porque me gustaba y pense que te iba a gustar porque cuando
       me dijiste que te gustaba ya la habia comprado asi que menos mal que me dijiste que te gustaba esa
       jajaja -->
-
+<!--
       contando un poco mi estancia en cordoba me compre unas zapatillas puma que estan lindas la verdad te las queria mostrar pero nunca encontre el momento de
       decirte o nunca me anime hoy fui a retirar los lentes que me hice porque la semana pasada fui al oftalmologo y basicamente si necesito lentes para ver y estoy peor del ojo izquierodo encima
       la izquierda siempre empeora todo jaja  ya fuera de los chistes los lentes me quedan raro me hacen sentir raro pero bueno mientras pueda ver todo bien aunque sin lentes tambien veo,
@@ -186,12 +226,37 @@
       <br><br><br>
       No sabia que habiamos terminado pero bueno te pedi que me avisaras que desicion ibas a tomar
       <br><br>
-      yo aun te amo pero si queres que te trate como si no fuesemos nada esta bien
+      yo aun te amo pero si preferis que te trate como que no te amo o como si no fuesemos nada esta bien, no se cual es la finalidad
+      no se que vas a conseguir con esto yo siento que me alejas de a poco pero esta bien somos adultos los dos
+      vos estas muy segura con esto y lo respeto
       <br><br>
-      espero que esto funcione
+      espero que funcione
       <br>
       cuidate mucho
-    </p>
+
+
+      <br><br><br>
+      domingo 25 de enero
+
+      <br><br>
+      me cuesta mucho asimilar toda la situacion me duele mucho no se que me pasa mi mente como que lo quiere entener pero mi cuerpo lo esta rechazando
+      dormi 3 horas anoche llore mucho, me desperte a las 7 y solo queria hablar con vos, sos una persona tan especial para mi
+      y ahora tengo que seguir adelante solo <br><br>
+      todo esto lo cuento desde lo que siento yo, se que vos tenes tus sentimientos tambien, no quiero que te enojes ni lo mal interpretes porfavor!!!<br><br>
+      vos me dijiste que queres que siga subinedo a la pagina para saber que no cambio y lo entiendo pero yo como hago para saber que sentis vos o si estas cambiando?
+      como se que mi fatima sigue ahi?
+      yo tambien estoy recontra inseguro y lo sabes, y no se, no se que hacer ya la verdad.
+      me parece bien que te quieras enfocar en vos ahora, pero no entiendo porque me tengo que ir de tu lado<br>
+      seguramente debo tener algun problema psicologico, es en lo unico que vengo pensando desde que nos vimos la ultima vez, no se sera el miedo al abandono o algo relacionado
+      no me des mucha pelota a lo que escribo por las dudas, soy yo contra mi mente y mis sentimientos <br><br>te dije que no te iba a contar mas como me siento
+      porque siento que me hablas por lastima y no me gusta sentir eso pero bueno<br><br>
+
+      me levante y no hice nada mas que actualizar la pagina, me comi la cabeza pensando anoche, para cambiar un poco de tema ayer sali a caminar para intentar hacerle una fotocopia a mi pasaporte y vi el primer
+      oxxo de mi vida hasta le saque una foto para que vos tambien veas <br>
+      <a href="https://photos.app.goo.gl/to6cCviUWSMFMUah9">primer oxxo</a><br>
+      por hoy no hice mas nada, ando bajon ya vere que haccer, espero que vos la estes pasando bien
+
+    </p> -->
 
 
 <!--

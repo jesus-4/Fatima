@@ -184,3 +184,90 @@ body, .home-body {
   display: block;
   margin: 20px auto;
 }
+
+
+.diario-container {
+  max-width: 720px;
+  margin: 40px auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.diario-card {
+  background: rgba(255,255,255,0.04);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 8px 25px rgba(0,0,0,0.35);
+  transition: transform .2s ease;
+}
+
+.diario-card:hover {
+  transform: translateY(-2px);
+}
+
+.diario-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #FFD1D4;
+  font-weight: 600;
+  font-size: 1.05rem;
+}
+
+.diario-fecha {
+  color: #F2EEE8;
+  font-size: 0.9rem;
+}
+
+.diario-icon {
+  font-size: 1.4rem;
+  color: #BF2A52;
+}
+
+.diario-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height .6s ease;
+  padding: 0 20px;
+}
+
+.diario-body.abierto {
+  max-height: 5500px; /* suficientemente grande */
+  padding-bottom: 18px;
+}
+
+
+.diario-body p {
+  white-space: pre-line;
+  line-height: 1.8;
+  color: #F2EEE8;
+}
+
+.diario-imagenes a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #FF9FB2;
+  text-decoration: none;
+}
+
+.diario-body a,
+.diario-body a:link,
+.diario-body a:visited,
+.diario-body a:hover,
+.diario-body a:active,
+.diario-body a:-webkit-any-link {
+  color: #f7b7c8 !important;
+  text-decoration: none !important;
+  font-weight: 500;
+}
+
+
+.diario-body p {
+  white-space: pre-line;
+}
+

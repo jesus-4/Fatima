@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit {
     },
     {
       title: 'Si Tu Me Quisieras ',
-      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras .mp3'
+      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras.mp3'
     },
     {
       title: 'No Te Apartes De Mí.',
