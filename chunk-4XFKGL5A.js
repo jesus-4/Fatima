@@ -200,7 +200,7 @@ import{a as E}from"./chunk-GW7PPLHE.js";import{f as P,g as O,h as k,m as S}from"
 
       me alegro que te hayan gustado los regalos, no te sientas mal jaja yo te queria regalar, tenia ganas y la posibilidad de hacerlo solo disfrutalos y se feliz en medida de lo posible el broche de metal no es bonito pero pense que te podria ser muy funcional cuando necesitas agarrar mucho pelo, ahi se completa mi regalo del 14 jaja ya no te voy a poder dar nada mas hasta que vuelva asi que no te sienta mal!!!!!
       te quiero
-    `},{fecha:"",titulo:"",texto:`
+    `},{fecha:"27 de enero de 2026",titulo:"Martes",texto:`
       hoy fue una ma\xF1ana medio movida, me desperte y llame al banco donde me registre ayer porque ahora no me deja entrar no se porque, desde la llamada no me dieron ninguna solucion y encima mientras hacia la llamada me mandan un mensaje los due\xF1os de la casa para decirme cuanto debo pagar o sea mas presion
       en la llamada no me dieron ninguna solucion asi que dije \xA8me voy a hacer un poco de ejercicio en aca cerca\xA8 a dos cuadras masoemnos hay un un lugar re chico pero que tiene esas maquinas al aire libre, pero yo solo fui a hacer fondos y dominadas, volvi de hacer eso, estuve no se 30 min haciendo y me fui al banco a hablar a ver si de forma presencial me dan una solucion viable los hdpts pero anda, que espere 8 dias habiles, dentro de ese tiempo puede que me den una solucion
 
