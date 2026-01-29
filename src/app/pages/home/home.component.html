@@ -41,7 +41,8 @@
 
 
   <div class="titulo">
-    <h1 class="topic">Para mi querida Reina</h1>
+    <!-- <h1 class="topic">Para mi querida Reina</h1> -->
+    <h1 class="content-1">Para mi querida Reina</h1>
   </div>
 
 
@@ -56,6 +57,7 @@
         [class.active]="currentSongIndex === i"
         (click)="playSong(i)"
         >
+        <!-- <span class="song-name">{{ song.title }}</span> -->
         <span class="song-name">{{ song.title }}</span>
         <span class="icon">
           {{ currentSongIndex === i && isPlaying ? '⏸' : '▶' }}

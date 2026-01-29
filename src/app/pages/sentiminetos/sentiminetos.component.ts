@@ -383,9 +383,88 @@ entries: DiarioEntry[] = [
 
       con el tema del alquiler no se si queres que le pregunte a mis papas si te alquilan o si te la dan a la casa de arriba, total yo te habia comentado que mi mama me la habian ofrecido para que vaya yo a vivir solo entonces no se, no se como van a estar las cosas entre nosotros pero si queres te hago esa averiguacion capaz que te sale mas barato supongo pero te queda un poco lejos vos decime
 
-      exitos con las uñas amor 
+      exitos con las uñas amor
+
+      (18 hs) estuve tratando de actualizar la pagina pero se me fueron las ideas, tendria que reconstruir todo vuelta asi que voy a ver si puedo hacerlo mejor en otra rama sin alterar al que ya esta funcionando
+
+      ando con el estomago cerrado no se que me pasa, pero bueno por los menos algo vengo comiendo unos huevos revueltos, tendria que ver de mañana salir a comprar cosas para tener para cocinar, si es que me paga la universidad, encima hoy me llamo la dueña del lugar para apurarme a pagar jajaja y le tuve que mostrar que yo hice todo y depende de la universidad pero se siente feo que te apuren asi
+
+      me alegro que te hayan gustado los regalos, no te sientas mal jaja yo te queria regalar, tenia ganas y la posibilidad de hacerlo solo disfrutalos y se feliz en medida de lo posible el broche de metal no es bonito pero pense que te podria ser muy funcional cuando necesitas agarrar mucho pelo, ahi se completa mi regalo del 14 jaja ya no te voy a poder dar nada mas hasta que vuelva asi que no te sienta mal!!!!!
+      te quiero
     `
-  }
+  },
+  {
+    fecha: '27 de enero de 2026',
+    titulo: 'Martes',
+    texto:
+    `
+      hoy fue una mañana medio movida, me desperte y llame al banco donde me registre ayer porque ahora no me deja entrar no se porque, desde la llamada no me dieron ninguna solucion y encima mientras hacia la llamada me mandan un mensaje los dueños de la casa para decirme cuanto debo pagar o sea mas presion
+      en la llamada no me dieron ninguna solucion asi que dije ¨me voy a hacer un poco de ejercicio en aca cerca¨ a dos cuadras masoemnos hay un un lugar re chico pero que tiene esas maquinas al aire libre, pero yo solo fui a hacer fondos y dominadas, volvi de hacer eso, estuve no se 30 min haciendo y me fui al banco a hablar a ver si de forma presencial me dan una solucion viable los hdpts pero anda, que espere 8 dias habiles, dentro de ese tiempo puede que me den una solucion
+
+      ahora volvi y te estoy escribiendo esto mientras espero que se caliente el agua para ir a tomar unos mates, pero primero me voy a bañar y despues a tomar unos matecitos y actualizar lo que me dijiste de la pagina que podria cambiar, espero que no sea tanto quilombo tu mañana, sos una gran persona y vas a llegar muy lejos en la vida estoy seguro de eso, tenes muchisimo potencial lo puedo ver, no te desmotives :(
+
+      bueno borraste todo jaja asi que me voy a poner a cambiar las letras que me acuerdo que me pusiste eso voy investigar diferentes tipo de fuentes por si te intersa las voy a estar viendo en
+      <a href="fontpair.co">fonpair.co</a>
+
+      sabes que me bañe y no sale agua caliente asi que me tuve que bañar con agua fria, un horror pero bueno esta cochino lo peor es que si abria el agua fria salia mas fria, encima viste que cuando me baño se me cae pelo normal digamos pero hoy fue mucho, muy abuso, que miedo a quedarme pelado
+      <a href="https://photos.app.goo.gl/c2bdMF48vJpRckaR8">escribiendo este texto recien bañado</a>
+
+      vi la playlist que me compartiste, significa mucho para mi que te animes a contarme estas cosas, gracias de verdad la voy a analizar con detalle y perdon por hacer que tengas que colocar esas canciones en la playlist
+
+      bueno cambie la fuente, puse una que no es muy atractiva supongo pero me hizo acordar a mi letra apenas la vi, igual la puedo cambiar si te parece
+
+      estuvo lloviendo todo el dia, todo el dia hizo frio, desde que llegue hasta hoy solo frio y lluvia, es tremendo encima me vinieron a pedir que pague si o si la reserva de la habitacion porque mi cordinador dijo que le VIERNES recien me van a dar la plata entonces con la lluvia de mierda esta me tuve que ir a centro comercial a cambiar casi todos los dolares que traje para poder pagar la reserva, me quedan 40 dolares fisicos nomas y capaz que los cambie porque no creo llegar al viernes con lo que tengo ahora, asi que bueno hice el cambio y les pague a los pesados estos y ya me quede todo el dia en el depto, menos mal que me traje la campera nike para la lluvia pero a este ritmo creo que me voy a comprar un paraguas esta todo impresionante
+      me siento cansado
+    `
+  },
+  {
+    fecha: '28 de enero de 2026',
+    titulo: 'Miercoles',
+    texto:
+    `Hola perdon por no poder hacerlo mas temprano
+
+    anoche me quede escuchando tu playlist y me puse a llorar jaja y me dormi
+
+    hoy me desperte mas tarde tenia que ir a la uni a las 12 asi que a las 11 me tenia que ir de aca y me desperte a las 10 masomenos, bueno si me desperte ma temprano pero mi cuerpo no esta bien asi que me quede en cama nomas y me dormi hasta las 10
+
+    fui a la clase, medio meh la verdad como primera clase esta bien supongo, no me puede sorprender de momento, hice grupo con dos colombianos y cunado sali uno me acompaño y me iba hablando y no le entendia nada, no se si estoy medio sordo o el chico hablaba muy mal despues me tome un uber moto hasta mi departamente y se largo la lluvia no lo podia creer y el del uber me dijo que paremos assi que bue a esperar que pase un poco la lluvia...
+    <a href="https://photos.app.goo.gl/bQXWAwdVikbBVNFp6"> lluvia de m...</a>
+
+    y ahora a las 14:02 te estoy escribiendo esto, atorrante porque borras lo que escribis, me alegro mucho que la psicologa te haya ayudado o te haya dicho lo que necesitabas escuchar, si queres puedo tratar de conseguirte informacion sobre finales, parciales, tps, y unidades que se ven en adm de empresas
+
+    yo se que no estamos en una buena condicion pero te queria decir que si queres podemos seguir nuestro mundo de minecraft pero jugando desde el cel, en caso de que si quieras tendria que ver como hacerlo y si no queres esta bien, bueno eso de momento es mi dia, tengo otra clase a las 16, ya te voy a pasar mejor horario pero no se donde dejarlo para que te sea mas comodo para vos, bueno despues lo actualizo te mando un beso
+
+
+    bueno ya tuve la clase de las de las 16, duro una hora nomas pero todas estas clases son como de presentacion de la materia y cosas asi, essta materia se llama funding leadears y tiene muchas cosas de adm de empresas, ya te voy a pasar una foto de bibliografia si queres consultar, y de los temas que veo si te interesa consigo el material y tw lo paso ahora fui a consultar para ir al gym y menos mal que vine porque no es asi nomas, tenes que descargar una app y reervar un horario de entrenamiento si o si o sea que si yo cai para entrenar sin hcaer eso estaba en la B jaja pero bueno solo voy a venir los dias que tenga que venir a la uni los otros dias voy a hacer calistenia nomas tengo que esperar hasta lass 18 para tener seguridad informatic y no se que hacer.
+    <a href="https://photos.app.goo.gl/yxBFUb7qwmXwDz679">temas adm?</a>
+
+    mientras te escribia esto vinieron dos chicos y me preguntaron si antes de venir a la uni desayuno jaja muy random, parece que estan haciendo una encuesta o sondeo
+    bueno no se, me voy a poner a escuchar musica para hacer tiempo, encima anda re mal el internet aca
+
+    ya termine de cursar la materia esta seguridad integral ti le veo potencial, no parece aburrida y el profe es buena onda y tienen mucha experiencia, cuando sali de la uni ahora hace 20 min (son las 20:20) y la clase teoricamente era hasta las 19:30 pero se fue un monton el profe, bueno pense que no iba a encontrar forma de volver porque no me aparecia ningun uber moto disponible y me quede esperando un rato ahi porque me quede sin saldo en la tarjeta del colectivo pero menos mal pude volver, perdon por decirte de hablar soy muy pesado lo se
+
+    ahora me voy a comer que me estoy muriendo de hambre vengo comiendo re mal estos dias por no decir que no vengo comiendo casi
+
+    gracias por llamarme :( tenia muchas ganas de hablar con vos, me hiciste sentir mejor
+
+    sos muuy hermosa
+  `
+  },
+  {
+    fecha: '29 de enero de 2026',
+    titulo: 'Jueves',
+    texto:
+    `guenas, espero que hayas tenido un dia bueno y no tan estresante, exitos con la casa que te ibas a ver
+
+    yo me desperte y me prepare para irme a cargar plata a la tarjeta del colectivo y despues a me fui a comprar para comer, cocine y reecien termino de comer, la cosa que me dan unas ganas de dejar las cosas sucias y lavarlas despues jaja pero como puede llegar cualquier chico en cualquier momento tengo que dejar todo listo esto me cura el problema digamos de dejar todo sucio asi que apenas desocupo limpio
+
+    estoy viendo para arreglar la pagina como me dijiste anoche y hacerlo como un grid igual cuando lo haga lo vas a ver por aca de paso, despues me voy a poner a ver coass de la uni seguramente y se me va todo el dia ahi pero bueno hago cosas que me gustan no se si cuenta
+
+    depues habia pensando ajustar la pagina esta porque cuando mas dias pasen mas vas a tener que bajar entonces lo voy a agrupar por meses y que selecciones el dia del mes tipo calendario y te tire los mensajes que fui escribiendo
+
+    sabes que anoche soñe que estabas viendo un anime, no se porque soñe eso de la nada pero no me acuerdo cual ni nada y despues me recomendaste que lo viera
+    `
+    }
 ];
 
 
