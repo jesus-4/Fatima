@@ -4,6 +4,8 @@ export interface ContentData {
 
 export interface ContentItem {
   id: number;
+  colSpan: number;
+  rowSpan: number;
   type: 'card' | 'carousel';
   message?: Message;
   images: string[];
@@ -16,10 +18,4 @@ export interface Message {
 
 export interface ContentData {
   items: ContentItem[];
-}
-
-export interface ContentItem {
-  id: number;
-  type: 'card' | 'carousel';
-  images: string[];
 }

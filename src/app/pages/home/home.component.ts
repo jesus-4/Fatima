@@ -1,7 +1,7 @@
 import { Component, inject, OnInit, signal, ElementRef, ViewChild } from '@angular/core';
 import { NavbarComponent } from "../../shared/navbar/navbar.component";
 import { HttpClient } from '@angular/common/http';
-import { ContentData, ContentItem } from '../../shared/navbar/model/model';
+import { ContentData, ContentItem, Message } from '../../shared/navbar/model/model';
 import { Router } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { AbejaComponent } from "../abeja/abeja.component";
@@ -12,7 +12,6 @@ interface FloatingHeart {
   x: number;
   duration: number;
 }
-
 @Component({
   selector: 'app-home',
   imports: [NavbarComponent, CommonModule, AbejaComponent, CorazonComponent],

@@ -508,3 +508,66 @@ html, body {
   50% { transform: translateY(-15px); }
 }
 
+.collage-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 130px;
+  gap: 14px;
+  max-width: 900px;
+  margin: 40px auto;
+  padding: 12px;
+}
+
+/* ITEM */
+.collage-item {
+  position: relative;
+  overflow: hidden;
+  border-radius: 16px;
+  cursor: pointer;
+  background: #000;
+}
+
+/* IMAGEN */
+.collage-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* OVERLAY TEXTO */
+.collage-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(78, 10, 11, 0.92);
+  color: #F2EEE8;
+  padding: 14px;
+  overflow-y: auto;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity .3s ease;
+}
+
+/* ABIERTO */
+.collage-item.abierta .collage-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* TEXTO */
+.collage-overlay h3 {
+  margin: 0 0 8px;
+  font-size: 1rem;
+  color: #FFD1D4;
+}
+
+.collage-overlay p {
+  font-size: 0.9rem;
+  line-height: 1.6;
+}
+@media (max-width: 768px) {
+  .collage-grid {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 120px;
+  }
+}

@@ -118,37 +118,37 @@
   </div>
 </div>
 
-<!-- tarjetas -->
-<div class="contenedor-cards">
+<div class="collage-grid">
 
   @for (item of items(); track item.id) {
     @if (item.type === 'card') {
 
-      <div
-      class="card"
+    <div
+      class="collage-item"
+      [style.gridColumn]="'span ' + (item.colSpan || 1)"
+      [style.gridRow]="'span ' + (item.rowSpan || 1)"
       [class.abierta]="cardAbiertaId === item.id"
       (click)="toggleCard(item.id)"
-      >
-      <!-- IMAGEN (del JSON) -->
-      <img
-      class="card__img"
-      [src]="item.images[0]"
-      alt="imagen"
-      />
+    >
 
-      <!-- TEXTO (del JSON) -->
-      <div class="card__content">
-        <p class="card__title">
-          {{ item.message?.title }}
-        </p>
 
-        <p class="card__description">
-          {{ item.message?.text }}
-        </p>
+        <!-- FOTO -->
+        <img
+          class="collage-img"
+          [src]="item.images[0]"
+          alt="imagen"
+        />
+
+        <!-- TEXTO -->
+        <div class="collage-overlay">
+          <h3>{{ item.message?.title }}</h3>
+          <p>{{ item.message?.text }}</p>
+        </div>
+
       </div>
-    </div>
+
+    }
   }
-}
 
 </div>
 
