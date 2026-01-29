@@ -3,6 +3,8 @@
     {
       "id": 1,
       "type": "card",
+      "colSpan": 2,
+      "rowSpan": 2,
       "message": {
         "title": "Te amo un muchon",
         "text": "Si pudiera estar donde yo realmente quisiera estar, sería a tu lado abrazándote, besándote y diciéndote lo hermosa que sos, lo mucho que te amo y no escribiendo esto :("
@@ -26,42 +28,11 @@
         "assets/images/carousel1/img10.webp"
       ]
     },
-    {
-      "id": 3,
-      "type": "card",
-      "message": {
-        "title": "Siempre vos",
-        "text": "Siempre, pero siempre vas a ser mi prioridad en todo. Te quiero para toda la vida."
-      },
-      "images": [
-        "assets/images/card2.webp"
-      ]
-    },
-    {
-      "id": 4,
-      "type": "card",
-      "message": {
-        "title": "Cada momento que compartimos",
-        "text": "Es algo de lo que jamás me voy a arrepentir, me hiciste poder sentir lo que es amar y ser amado. Yo, un ser todo roto y lleno de rencor con el mundo, vos me enseñaste a confiar y a querer de nuevo."
-      },
-      "images": [
-        "assets/images/card3.webp"
-      ]
-    },
-        {
-      "id": 5,
-      "type": "card",
-      "message": {
-        "title": "Siempre vas a ser mi mayor tesoro",
-        "text": "Mi lugar seguro, mi lugar de paz y felicidad. Espero poder serlo para vos."
-      },
-      "images": [
-        "assets/images/card4.webp"
-      ]
-    },
         {
       "id": 6,
       "type": "card",
+      "colSpan": 1,
+      "rowSpan": 1,
       "message": {
         "title": "Te amo tanto",
         "text": "No te hacés una idea de lo que lloré haciendo esto, espero que te guste, mi amor."
@@ -73,6 +44,7 @@
         {
       "id": 7,
       "type": "card",
+      "rowSpan": 2,
       "message": {
         "title": "La persona que mas amo y adoro",
         "text": "Siempre lo vas a ser y siempre voy a estar orgulloso de vos y de tus ganas de vivir. Sos una inspiración para mí y quiero seguir aprendiendo más de vos."
@@ -92,20 +64,11 @@
         "assets/images/card7.webp"
       ]
     },
-        {
-      "id": 9,
-      "type": "card",
-      "message": {
-        "title": "Sos la mejor pareja y compañera que una persona puede tener",
-        "text": "Gracias siempre por todo lo que hiciste por mí y por lo que hacés día a día, te amo con todo mi corazón."
-      },
-      "images": [
-        "assets/images/card8.webp"
-      ]
-    },
       {
       "id": 10,
       "type": "card",
+      "rowSpan":2,
+      "colSpan":1,
       "message": {
         "title": "Si supieras lo que siento a tu lado",
         "text": "Estás en mi cabeza, te veo por todos lados. Sigo esperándote, sigo pensando en buscarte. Estar con vos un instante, tú eres una obra de arte."
@@ -136,18 +99,7 @@
         "assets/images/card11.webp"
       ]
     },
-      {
-      "id": 13,
-      "type": "card",
-      "message": {
-        "title": "Sos tan hermosa",
-        "text": "Si tan solo pudieras verte con mis ojos, verías que no me equivoco cuando te digo que eres perfecta y la mejor persona que se puede conocer en este mundo."
-      },
-      "images": [
-        "assets/images/card12.webp"
-      ]
-    },
-      {
+    {
       "id": 14,
       "type": "card",
       "message": {
@@ -156,6 +108,18 @@
       },
       "images": [
         "assets/images/card13.webp"
+      ]
+    },
+    {
+      "id": 9,
+      "type": "card",
+      "rowSpan":2,
+      "message": {
+        "title": "Sos la mejor pareja y compañera que una persona puede tener",
+        "text": "Gracias siempre por todo lo que hiciste por mí y por lo que hacés día a día, te amo con todo mi corazón."
+      },
+      "images": [
+        "assets/images/card8.webp"
       ]
     },
       {
@@ -170,8 +134,22 @@
       ]
     },
       {
+      "id": 13,
+      "type": "card",
+      "rowSpan":2,
+      "colSpan":2,
+      "message": {
+        "title": "Sos tan hermosa",
+        "text": "Si tan solo pudieras verte con mis ojos, verías que no me equivoco cuando te digo que eres perfecta y la mejor persona que se puede conocer en este mundo."
+      },
+      "images": [
+        "assets/images/card12.webp"
+      ]
+    },
+      {
       "id": 16,
       "type": "card",
+      "rowSpan":2,
       "message": {
         "title": "Ojala",
         "text": "Ojalá la vida nos permita seguir juntos, ojalá podamos vivir mil aventuras juntos, ojalá podamos cumplir todos nuestros sueños y metas juntos, ojalá podamos ser felices juntos por siempre. Te amo "
@@ -183,6 +161,7 @@
       {
       "id": 17,
       "type": "card",
+      "rowSpan":2,
       "message": {
         "title": "",
         "text": "Te amo, Fátima. Sufro por vos porque de verdad sé que sos el amor de mi vida. Cuando te terminé y te dije que volvería por vos, lo decía en serio. Luego me arrepentí porque supe que no era el camino, pero tampoco tomé las mejores decisiones. No quiero que eso se repita, quiero cambiar y que veas que sos el amor de mi vida, quiero que me sientas como tu lugar seguro."
