@@ -268,8 +268,7 @@ entries: DiarioEntry[] = [
       espero que funcione
 
       cuidate mucho
-    `,
-    imagenes: []
+    `
   },
   {
     fecha: '25 de enero de 2026',
@@ -463,7 +462,88 @@ entries: DiarioEntry[] = [
     depues habia pensando ajustar la pagina esta porque cuando mas dias pasen mas vas a tener que bajar entonces lo voy a agrupar por meses y que selecciones el dia del mes tipo calendario y te tire los mensajes que fui escribiendo
 
     sabes que anoche soñe que estabas viendo un anime, no se porque soñe eso de la nada pero no me acuerdo cual ni nada y despues me recomendaste que lo viera
+
+    bueno ya lo actualice, no si te referias a algo asi, espero que este bien, tenia ganas de salir a hacer ejercicio pero vieras como llueve y truena un monton
+
+    ahora me voy a poner a leer unos libros de funding leaders y hacer ejercicio aca en el depa no me queda de otra
+
+    por que sentis mal? te puedo ayudar de alguna forma? si queres hablar yo estoy :((
+    espero que te sientas mejor
+
+    habia encontrado esto en falabella de aca, yo tengo un falabella cerca, si ves la tuya por ahi y queres podemos intetar conseguirla
+    <a href="https://www.falabella.com.co/falabella-co/search?Ntt=Babyliss"> babyliss?</a>
     `
+    },
+    {
+      fecha: '30 de enero de 2026',
+      titulo: 'Viernes',
+      texto:
+      `Buenos diass, espero que te encuentres mucho mejor que ayer, me preocupo mucho por vos :((
+
+      hoy me levante mas temprano y tuve tiempo de preparame y desayunarnien, ahora son las 10:22 asi que a las 11 me voy a tomar el colectivo para irme a la uni y quedarme todo el bendito dia ahi, es la unica forma que encuentro para ahorrar plata
+      Ojala me paguen hoy los hdpts estos asi puedo ir a comprar mas comida, anoche no cene porque tenia arroz y nada mas, sino voy a tener que ir a cambiar los ultimos dolares que me quedan, encima los del banco de aca no me dieron solucion a la cuenta aun que lo pario todo mal jaja espero que no me apure hoy la gente de la renta
+
+      mientras desayunaba la dueña de la casa me presento a otro colombiano que vive hace tiempo aca asi y me puse a hablar con el y es medio hdp jaja pero bueno no me importa, no es que me voy a relacionar tanto con el pero me dio un consejo para comprar comida mas barata porque resulta que yo estaba comprando en un lugar caro segun el, pero el lugar donde yo iba es como un jumbo como para que te hagas una idea
+      creo que llevo todo para la universidad, lo bueno es que hay toma corrientes por todos lados asi que sin bateria no me voy a quedar y llevo ropa para cambiarme para ir a la gym, mi primer dia aca y me da nervios pero bueno a nadie le importo asi que no deberia comerme la cabeza
+
+      espero que estes teniendo una buena jornada laboral de mando un abrazo, todo va a estar bien sos un caso especial
+
+      bueno ya termine la primera clase, apenas empezo armo grupos la profe y me toco con UN PELOTUDO mamita querida, teniamos que hacer 12 preguntas en base a un enunciado y parace que aca o almenos este chico no tienen la capacidad de razonar por su cuenta, me dio bronca que todo queria preguntarle a chat gpt y despues se ponia a boludear, que clase de ingeniero va a ser asi no se, yo me senti medio mal porque solo pude responder 10 de las 12 preguntas pero bueno complete la actividad, ahora voy a ver que puedo comer(13:28), y a las 14 me ire al gym y despues a dar una vuelta por el shopping/centro comercial que tengo a un par de cuadras hasta que tenga la clase de las 16hs y y despues de lass 19 que cansancio jaja al final todo bien tomando el colectivo, lo bueno es que puedo chequear el saldo de la tarjeta gracias al NFC que tiene el telfono, creo que nunca estuve tanto tiempo en la universidad, no se mmmm desde las 11:40aprox hasta las 19:30/20hs es un monton de tiempo supongo en fin te voy a estar comentando por aca si encuentro algo de babyliss por el shopping, cuidate mucho y exitoss para tu tarde
+      <a href="https://photos.app.goo.gl/j1pSNZveX4LMU9os9">fotito de la espera</a>
+
+      bueno ya sali de entrenar, hice pecho y me re duele jaja me compre un yogurt para pasar el rato
+      <a href="https://photos.app.goo.gl/1aaLCTKBDuBvFuN5A"> yog </a>
+      y se me hace que no voy a ir hoy a ver la plancha porque tengo que hablar con daniel(mi coordinador) ahora en un rato por el tema de la plata y ya se me va hacer tarde
+
+      me preocupa mucho tu bienestar, espero que estes bien o no la estes pasando muy mal =((
+
+      ya hable con daniel y me dice que a MAAS TARDAR el otro viernes me dan la plata no lo puedo creer, ya le dije, con la plata que me dan no me alcanza, encima que me quedan los ultimos 11 mil pesos colombianos para sobrevivir hasta que me paguen (es mentira tengo 20 dolares mas aun) pero le dije eso y ahi nomas me dice "no te preocupes, voy a tratar de que el pago se haga entre el lunes y martes" peero que hdp decia yo en mi mente, le dije que le diga el a la mujer del alojamiento el porque no le puedo pagar ahora, estoy re enojado jaja pero bueno ahora me voy a las clases de las 16hs
+
+      te paso esto por aca porque me da cosa molestarte por mensajes
+      <a href="https://www.facebook.com/groups/minecraftbedrocklatinoamerica/permalink/1203982581893525/?sfnsn=scwspmo&ref=share&mibextid=VhDh1V"> un poco de humor </a>
+
+      ya me queda la ultima clase y tengo que esperar 20 min para entrar, asi que me vine a una terraza a escuchar cro y escribirte je, la clase esta que tuve estuvo normal, unas formas matematicas y nadda mas, otro trabajo en grupo y me toco con un chabon que parece que es hiperactivo no se puede quedar quieto con nada, habla muy rapido como desesperado pero se nota que tiene buenas intenciones ahora te paso las vistas que tengo desde la terraza este es el piso 6 y ahora tengo clases en el piso 8
+      <a href="https://photos.app.goo.gl/MZseL4NcCdtUCdPU9"> pre clase?</a>
+
+      ya me queda la ultima clase y me voyyyyy menos mal, que estres que pase hoy en la cuidad, es muy grande mucho ruido, muchas bocinas, por todo tocan bocina aca vieras que ganas de irme que tengo y estar en mis 4 paredes jaja
+      `
+    },
+    {
+      fecha: '31 de enero de 2026',
+      titulo: 'Sabado',
+      texto:
+      `Buen dia, ojala estes bien
+
+      hoy no fue un dia con tanta historia jaja me levante me prerpare el desayuno y me puse a hacer unos cursos que te pide la universidad de aca para poder aprobar la cursada, lo bueno es que te lo dan ellos a los cursos desde su pagina
+      parece que estuvo bueno el entrenamiento de pecho ayer, hice solo pecho y me duele la espald tambien, Worth? puede ser es como un 2x1
+      lo bueno de que me tomo los colectivos es que me dejan muy cerca de donde vivo, literal para ir lo tengo a 3 cuadras y para volver me deja aprox a 3 cuadras, llegue anoche y necesitaba descansar la verdad, hoy no tengo ganass de hacer nada asi que seguramente me enfoque en la uni nomas ya que no me queda de otra, vine pa esto, tengo que ser el mejor hasta que me vaya
+      bueno esto es por ahora, despues te voy a comentar como avanza el dia, abrazos!
+
+      me cambie el collar y me puse el de la espada, algo me dice que se va a decolocarar feo como la cadena del (dije? dige?) pero bueno, espero que a la cadena no le pase nomas
+
+      bueno al final fue un dia sin mas, complete actividades, hable con mi abuela, mi mama me paso plata por las dudas y ya es el final practicamente
+      comere y me ire a dormir, igual fue un dia tranquilo, worth it para mi
+
+      espero que vos tambien allas tenido un dia tranquilo/lindo
+
+      `
+    },
+    {
+      fecha: '1 de febrero de 2026',
+      titulo: 'Domingo',
+      texto:
+      `hoy me desperte mas temprano y me fui a entrenar calistenia, estuvo bueno porque se largo la lluvia y se sentia bien entrenar asi jaja me duelen las manos pero valio la pena para mi despues me fui a bañar con agua fria... ya le voy a reclamar al dueño de la casa porque supuestamente las otras habitaciones si tienen agua caliente pero la mia no no se porque los chicos me dijieron que la deje salir 10 min y salia muy caliente pero para mi no funciona ni con 10 ni con 20 asi que bueno depues me fui a prerar el desayuno y me lo cruce a robert el mexicano y me dijo que se iba a ir de la casa esta tarde porque la universidad le consiguio un lugar mas cerca para vivir asi que bueno lo tuve que despedir y me dejo comida y no me dejo que le pague la plata que me presto, me dijo que estaba bien asi y me senti mal jaja asi que me quede charlando con el hasta que se fue y me pidio que lo ayude a cargar las maletas en el uber y adios robert depues me fui a cocinar y me puse a lavar todo y hace un rato me desocupe ahora en una hora mas me voy a ir a comprar mas comida y un chico que vive aca hace 4 años me dijo que mejor me compre mi propia taza para tomar por las dudas y llegaron muchos colombianos de la nada todo porque empiezan la clases mañana para todas las universidades... todas menos la mia que empezo antes pero bueno no me puedo quejar solo paso casi todo el dia alli pero dos dias a la semana capaz que los otros chicos tienen mas dias para ir a la universidad, vaya a saber la verdad
+
+      me pone mal que no estes comiendo, que te estres estresando tanto para perder tanto pelo. cuidate :( si te puedo ayudar de alguna forma solo decilo
+
+      `
+    },
+    {
+      fecha: '2 de febrero de 2026',
+      titulo: 'Lunes',
+      texto:
+      `que dia mas largo y eterno y cansador, dormi re mal anoche, no me podia dormir y me desperte a las 6 encima, me quede en cama hasta las 8 y despues volvi a empezar la rutina, sali a entrenar, desayune, me bañe y despues a fui a shopping a ver a que onda los precios y todo eso, estuvi ahi hasta las 14 masomenos, vi proteinas jaja y me tienta pero voy a ver si llego a sobrevivir bien el mes y si si me voy a comprar para tener y cocinar cosas, cosas que siempre quise pero nunca tuve la plata comprarme volvi a la casa y me cocine quinoa con un mega omelette de huevvo y salio todo tan rico la verdad despues vine a la pieza y me dormi y recien me despierto, vieras como llueve, todos los dias llueve y mucho y por mucho tiempo, tenia ganas de salir a ver mas precios para comprar carne pero se me hace que cuando pare un poco la lluvia me voy a ir a comprar un paraguas antes que otra cosa, aun no me pagan pero la aplicacion del banco ya me anda asi que puedo pagar con transferencias tranquilamente ahora como llueve voy a aprovechar y estudiar o capaz me ponga a ver un video no se de mientras me preparo el mate jaja
+      `
     }
 ];
 
