@@ -329,7 +329,7 @@ import{a as E}from"./chunk-GW7PPLHE.js";import{f as O,g as P,h as k,m as S}from"
       se que vas a a conseguir muchas cosas, segui siempre pensando en tu futuro, estoy orgulloso de lo fuerte que sos, todo va a salir para vos, muchos exitoss en la universidad,  muchos exitos en el trabajo, te deseo lo mejor siempre
       este va a ser mi ultimo mensaje y la pagina quedara abierta hasta que el servidor desee tirarla abajo por inactvidad asi que bueno, es un adios supongo.
       cuidate mucho
-      `},{fecha:"16 de marzo de 2026",titulo:"Lunes",texto:`
+      `},{fecha:"19 de marzo de 2026",titulo:"jueves",texto:`
       Holaaaa espero que estes bien, me dan muchas ganas de hablar con vos pero tengo mucho miedo de sentir que te molesto, ne gustaria poder ayudarte como sea pero tambien quiero  respetar tu desicion de no hablarme, entiendo que puede ser tu forma de sanaro que simplemente te queres olvidar de mi que tambien es entendible
       yo te extra\xF1o mucho la verdad, no se jaja siento que sos muy importante para mi, no puedo sacarte de mi cabeza como que te tengo muy presente en todo yyyyy bueno eso
 
