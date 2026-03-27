@@ -330,6 +330,7 @@ import{a as H}from"./chunk-4Q7TQKNT.js";import{f as P,g as N,h as I,m as V}from"
       este va a ser mi ultimo mensaje y la pagina quedara abierta hasta que el servidor desee tirarla abajo por inactvidad asi que bueno, es un adios supongo.
       cuidate mucho
       `},{fecha:"10 marzo de 2026",titulo:"Martes",texto:`
+      hola mi amor :((
       Me cuesta mucho no pensarte, no se que estaras haciendo, espero que andes bien, yo vengo usando y alternando todos los dias los collares que te regale porque me gusta aunque capaz nada vuelva a ser igual, no me quiero ilusionar pero realmente deseo poder volver y abrazarte con todas las fuerzas del mundo
 
       siento que algo cambio dentro de mi, al principio me "gustaba" estar aca, de no depender de mi viejos, de que me digan que vaya a tal lugar, de comer lo que yo quiera, de cocinar a mis tiempos, de que mi tiempo sea solo mio pero no se, el estar solo no es tan facil jaja te extra\xF1o mucho y eso capaz tambien me esta jodiendo porque no saber nada de vos me hace sentir mal, me puse a hacer cursos y tratar de mantenerme ocupado pero no puedo para mi lo eras y lo sos todo no se, capaz me estoy haciendo mal
