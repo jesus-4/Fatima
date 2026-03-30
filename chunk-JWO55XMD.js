@@ -399,11 +399,11 @@ import{a as F}from"./chunk-4Q7TQKNT.js";import{f as P,g as N,h as I,m as V}from"
       `},{fecha:"30 de marzo de 2026",titulo:"Lunes",texto:`
       Hola espero que estes bien y que hayas podido descansar el finde de semana
 
-      al final te pude conseguir el material para que puedas estudiar e intentar rendir libre, no te quiero molestar por wpp, ya entendi cual es mi lugar asi que te lo mande por mail, espero que lo veas por ahi porque no creo que lo vayas a ver por aca la verdad de cualquier forma te dejo el link para que accedas
+      al final te pude conseguir el material para que puedas estudiar e intentar rendir libre, no te quiero molestar por wpp, ya entendi cual es mi lugar asi que te lo mande por mail, espero que lo veas por ahi porque no creo que lo vayas a ver por aca la verdad, de cualquier forma te dejo el link para que accedas
 
       <a href="https://drive.google.com/drive/folders/1bFuompjn4DL-AOWcLJOuns4iwhnnmB_K?usp=drive_link"> material de estudio </a>
 
-      la sophia esta semana va a estar en chilecito asi que si queres pedirle los auriculares, por mi esta bien y no hay problema, pero no quiero decirle que te los de por las dudas te vaya a molestar la verdad, ya no quiero sentirme molesto, ni sentir que te molesto, perdon
+      la sophia esta semana va a estar en chilecito asi que si queres pedirle los auriculares, por mi esta bien y no hay problema preferiria que lo pidas la verdad me siento mal de haberte pedido los tuyos, te termine jodiendo nomas, pero no quiero decirle que te los de por las dudas te vaya a molestar la verdad, ya no quiero sentirme molesto, ni sentir que te molesto, perdon
 
       espero que tengas un buen incio de semana y que te vaya muy bien en tu dia, trabajo, universidad y lo que tengas planeado hacer
 
