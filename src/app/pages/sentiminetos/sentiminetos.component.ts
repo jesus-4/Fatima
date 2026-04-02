@@ -21,14 +21,25 @@ interface FloatingHeart {
   x: number;
   duration: number;
 }
+
 export interface DiarioEntry {
   fecha: string;
   titulo: string;
   texto: string;
   imagenes?: string[];
-  abierto?: boolean;
 }
 
+interface DiarioEntryEnriquecida extends DiarioEntry {
+  dia: number;
+  diaSemana: string;
+  dateObj: Date;
+}
+
+interface MesGrupo {
+  mes: string;
+  anio: number;
+  items: DiarioEntryEnriquecida[];
+}
 
 @Component({
   selector: 'app-sentiminetos',
@@ -45,9 +56,10 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
   private ctx!: CanvasRenderingContext2D;
   private stars: Star[] = [];
   private animationId!: number;
-
   private width = window.innerWidth;
   private height = window.innerHeight;
+
+  // ── Canvas / estrellas ──────────────────────────────────────────
 
   ngAfterViewInit(): void {
     this.initCanvas();
@@ -82,17 +94,13 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
 
     for (const star of this.stars) {
       star.y += star.speed;
-
-      // 🔁 si sale de la pantalla, vuelve arriba
       if (star.y > this.height) {
         star.y = 0;
         star.x = Math.random() * this.width;
       }
-
       this.ctx.beginPath();
       this.ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
       this.ctx.fillStyle = `rgba(255,255,255,${Math.random() * 0.5 + 0.3})`;
-
       this.ctx.fill();
     }
 
@@ -104,56 +112,145 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
     this.height = window.innerHeight;
     this.initCanvas();
   };
-  items = signal<ContentItem[]>([]);
 
+  // ── HTTP ────────────────────────────────────────────────────────
+
+  items = signal<ContentItem[]>([]);
   constructor(private http: HttpClient) {}
 
+  entradasAgrupadas: MesGrupo[] = [];
+
   ngOnInit() {
-    this.http
-      .get<ContentData>('assets/data/conten2.json')
-      .subscribe(data => this.items.set(data.items));
+  this.http
+    .get<ContentData>('assets/data/conten2.json')
+    .subscribe(data => this.items.set(data.items));
+
+  this.entradasAgrupadas = this.calcularGrupos();
   }
 
-  // anillo
+  // ── Anillo ──────────────────────────────────────────────────────
+
   showProposal = false;
+  onRingTap()    { this.showProposal = true; }
+  closeProposal(){ this.showProposal = false; }
 
-  onRingTap() {
-    this.showProposal = true;
-  }
-
-  closeProposal() {
+  accept() {
     this.showProposal = false;
+    this.explodeHearts();
   }
 
-accept() {
-  this.showProposal = false;
-  this.explodeHearts();
+  // ── Corazones flotantes ─────────────────────────────────────────
+
+  floatingHearts = signal<FloatingHeart[]>([]);
+  private heartId = 0;
+
+  explodeHearts() {
+    const newHearts: FloatingHeart[] = Array.from({ length: 30 }).map(() => ({
+      id: this.heartId++,
+      x: Math.random() * 100,
+      duration: 2000 + Math.random() * 2000
+    }));
+    this.floatingHearts.update(h => [...h, ...newHearts]);
+    setTimeout(() => this.floatingHearts.set([]), 4500);
+  }
+
+  // ── Diario ──────────────────────────────────────────────────────
+
+  private calcularGrupos(): MesGrupo[] {
+  const grupos = new Map<string, MesGrupo>();
+
+  for (const entry of this.entries) {
+    const limpia = entry.fecha.replace(/\bde\b/gi, '').replace(/\s+/g, ' ').trim();
+    const partes = limpia.split(' ');
+    const dia    = parseInt(partes[0]);
+    const mesStr = partes[1]?.toLowerCase();
+    const anio   = parseInt(partes[2]);
+    const mes    = this.MESES.indexOf(mesStr);
+
+    if (isNaN(dia) || isNaN(anio) || mes === -1) {
+      console.warn(`Fecha inválida: "${entry.fecha}"`);
+      continue;
+    }
+
+    const dateObj = new Date(anio, mes, dia);
+    const key     = `${anio}-${String(mes).padStart(2, '0')}`;
+
+    if (!grupos.has(key)) {
+      grupos.set(key, { mes: this.MESES[mes], anio, items: [] });
+    }
+
+    grupos.get(key)!.items.push({
+      ...entry,
+      dia,
+      diaSemana: this.DIAS_SEMANA[dateObj.getDay()],
+      dateObj
+    });
+  }
+
+  return [...grupos.values()].sort((a, b) => {
+    const ka = `${a.anio}-${String(this.MESES.indexOf(a.mes)).padStart(2, '0')}`;
+    const kb = `${b.anio}-${String(this.MESES.indexOf(b.mes)).padStart(2, '0')}`;
+    return ka.localeCompare(kb);
+  });
 }
 
-floatingHearts = signal<FloatingHeart[]>([]);
-private heartId = 0;
 
-explodeHearts() {
-  const amount = 30;
+  private readonly MESES = [
+    'enero','febrero','marzo','abril','mayo','junio',
+    'julio','agosto','septiembre','octubre','noviembre','diciembre'
+  ];
 
-  const newHearts: FloatingHeart[] = Array.from({ length: amount }).map(() => ({
-    id: this.heartId++,
-    x: Math.random() * 100,
-    duration: 2000 + Math.random() * 2000
-  }));
+  private readonly DIAS_SEMANA = [
+    'domingo','lunes','martes','miércoles','jueves','viernes','sábado'
+  ];
 
-  this.floatingHearts.update(h => [...h, ...newHearts]);
+  entradaAbierta: DiarioEntry | null = null;
 
-  setTimeout(() => {
-    this.floatingHearts.set([]);
-  }, 4500);
+  abrirModal(entry: DiarioEntry) { this.entradaAbierta = entry; }
+  cerrarModal()                   { this.entradaAbierta = null; }
+
+get entradosPorMes(): MesGrupo[] {
+  const grupos = new Map<string, MesGrupo>();
+
+  for (const entry of this.entries) {
+    // Eliminar "de" y espacios extra, dejar solo "dia mes anio"
+    const limpia = entry.fecha.replace(/\bde\b/gi, '').replace(/\s+/g, ' ').trim();
+    const partes = limpia.split(' ');
+    const dia    = parseInt(partes[0]);
+    const mesStr = partes[1]?.toLowerCase();
+    const anio   = parseInt(partes[2]);
+    const mes    = this.MESES.indexOf(mesStr);
+
+    if (isNaN(dia) || isNaN(anio) || mes === -1) {
+      console.warn(`Fecha inválida: "${entry.fecha}"`);
+      continue;
+    }
+
+    const dateObj = new Date(anio, mes, dia);
+    const key     = `${anio}-${String(mes).padStart(2, '0')}`;
+
+    if (!grupos.has(key)) {
+      grupos.set(key, { mes: this.MESES[mes], anio, items: [] });
+    }
+
+    grupos.get(key)!.items.push({
+      ...entry,
+      dia,
+      diaSemana: this.DIAS_SEMANA[dateObj.getDay()],
+      dateObj
+    });
+  }
+
+  return [...grupos.values()].sort((a, b) => {
+    const ka = `${a.anio}-${String(this.MESES.indexOf(a.mes)).padStart(2, '0')}`;
+    const kb = `${b.anio}-${String(this.MESES.indexOf(b.mes)).padStart(2, '0')}`;
+    return ka.localeCompare(kb);
+  });
 }
 
-
-
-entries: DiarioEntry[] = [
+  entries: DiarioEntry[] = [
   {
-    fecha: '16 Enero 2026',
+    fecha: '16 enero 2026',
     titulo: 'Feliz 16 de enero ❤️',
     texto: `
       Feliz 16 de este mes de enero.
@@ -173,7 +270,7 @@ entries: DiarioEntry[] = [
     imagenes: []
   },
   {
-    fecha: '20 Enero 2026',
+    fecha: '20 enero 2026',
     titulo: 'Primer día en Córdoba',
     texto: `
       contando un poco mi estancia en cordoba me compre unas zapatillas puma que estan lindas la verdad te las queria mostrar pero nunca encontre el momento de
@@ -543,8 +640,180 @@ entries: DiarioEntry[] = [
       titulo: 'Lunes',
       texto:
       `que dia mas largo y eterno y cansador, dormi re mal anoche, no me podia dormir y me desperte a las 6 encima, me quede en cama hasta las 8 y despues volvi a empezar la rutina, sali a entrenar, desayune, me bañe y despues a fui a shopping a ver a que onda los precios y todo eso, estuvi ahi hasta las 14 masomenos, vi proteinas jaja y me tienta pero voy a ver si llego a sobrevivir bien el mes y si si me voy a comprar para tener y cocinar cosas, cosas que siempre quise pero nunca tuve la plata comprarme volvi a la casa y me cocine quinoa con un mega omelette de huevvo y salio todo tan rico la verdad despues vine a la pieza y me dormi y recien me despierto, vieras como llueve, todos los dias llueve y mucho y por mucho tiempo, tenia ganas de salir a ver mas precios para comprar carne pero se me hace que cuando pare un poco la lluvia me voy a ir a comprar un paraguas antes que otra cosa, aun no me pagan pero la aplicacion del banco ya me anda asi que puedo pagar con transferencias tranquilamente ahora como llueve voy a aprovechar y estudiar o capaz me ponga a ver un video no se de mientras me preparo el mate jaja
+
+      me alegro mucho que hayas podido alquilar, espero que te ayude de verdad para lo que queres y realmente se que te va a ir re bien la universidad me alegro que consigas lo que queres
+
+      estoy teniendo problemas con la pagina porque no se suben las actualizaciones, la compu me dice todo ok cuando hago actualizacion pero la pagina no esta ok jaja
+      `
+    },
+    {
+      fecha: '3 de febrero de 2026',
+      titulo: 'Miercoles',
+      texto:
+      `Que dia mas largo fue el  de ayer, durante la mñana sali a comprar para hacer milanesas y me fui a hacer ejercicio prepare las milanesas y pense que el capricho me habia salido caro pero salieron muchas milanesas menos mal entonces tengo para comer varios dias y la verdad que vviendolo asi me salio barato todo jaja despues a la tarde los chicos de peru me invitaron a ir al centro (ellos tenian que hacer algo y yo fui a ver) la verdad que no me arrepiento de nada jaja muy grande la ciudad muy linda le saque muchas fotos para que veas, nos volvimos en uber y cada uno se fue a encerrar a su habitacion y yo me fui de vuelta a hacer ejercicio al parque que tengo cerca eso como las 19:30 (ya es de noche aca a esa hora) y de paso a una dietetica a preguntar precios y todas esas cosas para cuando me paguen organizarme mejor con las comidas
+      <a href="https://photos.app.goo.gl/TgtSWDHaaBFNipho8"> foticos </a>
+
+      hoy me levante fui a hacer ejercicio desayune, me fui a cargar plata en la tarjeta del colectivo para moverme a la uni, cocine para traer y comer aca, durante la clase salio todo bien gracias a que nos toco trabajar individualmente y se toca mucho la diferencia cuando no tenes a alguien que te quiere hacer perder el tiempo, prefiero que todo dependa de mi antes que depender otros la verdad, ahora estoy esperando que sean las 15 para ir al gym y depues a clases y seguramente salga a entrenar de vuelta cuando vuelva de la uni es como que estoy metiendo una triple rutina de entrenamiento jaja pero mejor, me ayuda a mantenerme despejado y centrado en mi
+
+      no sabes lo que me esta costando subir las acts a la pagina, como que el servidor donde estan ubicadas no esta funcionando del todo bien, el lunes lo pude solucionar, pero no subio hasta que me di cuenta que no estaba funcionando
+
+      en fin cuidate mucho
+      `
+    },
+    {
+      fecha: '20 de febrero de 2026',
+      titulo: 'Viernes',
+      texto:
+      `
+      Bueno te esscribo este mensaje para decirte feliz cumpleaños, espero que la estes pasando muy bien, que te regalen cosas lindas y que disfrutes mucho tu dia, sos una persona muy especial para mi y te deseo lo mejor del mundo, espero que este año sea un año de crecimiento personal para vos y que puedas lograr todo lo que te propongas, feliz cumpleaños de nuevo
+
+      se que vas a a conseguir muchas cosas, segui siempre pensando en tu futuro, estoy orgulloso de lo fuerte que sos, todo va a salir para vos, muchos exitoss en la universidad,  muchos exitos en el trabajo, te deseo lo mejor siempre
+      este va a ser mi ultimo mensaje y la pagina quedara abierta hasta que el servidor desee tirarla abajo por inactvidad asi que bueno, es un adios supongo.
+      cuidate mucho
+      `
+    },
+    {
+      fecha: '10 marzo de 2026',
+      titulo: 'Martes',
+      texto:
+      `
+      hola mi amor :((
+      Me cuesta mucho no pensarte, no se que estaras haciendo, espero que andes bien, yo vengo usando y alternando todos los dias los collares que te regale porque me gusta aunque capaz nada vuelva a ser igual, no me quiero ilusionar pero realmente deseo poder volver y abrazarte con todas las fuerzas del mundo
+
+      siento que algo cambio dentro de mi, al principio me "gustaba" estar aca, de no depender de mi viejos, de que me digan que vaya a tal lugar, de comer lo que yo quiera, de cocinar a mis tiempos, de que mi tiempo sea solo mio pero no se, el estar solo no es tan facil jaja te extraño mucho y eso capaz tambien me esta jodiendo porque no saber nada de vos me hace sentir mal, me puse a hacer cursos y tratar de mantenerme ocupado pero no puedo para mi lo eras y lo sos todo no se, capaz me estoy haciendo mal
+      te mando un abrazote
+      `
+    },
+    {
+      fecha: '19 de marzo de 2026',
+      titulo: 'jueves',
+      texto:
+      `
+      Holaaaa espero que estes bien, me dan muchas ganas de hablar con vos pero tengo mucho miedo de sentir que te molesto, ne gustaria poder ayudarte como sea pero tambien quiero  respetar tu desicion de no querer hablarme
+      yo te extraño mucho la verdad, no se jaja siento que sos muy importante para mi, no puedo sacarte de mi cabeza como que te tengo muy presente en todo yyyyy bueno eso, te extraño mucho enserio
+
+      espero que ya estes cursando de forma normal en la universidad y bueno si no tenes acceso a un al aula yo tengo contacto de gente que trabaja adentro del area del sistema y puedo hablarles con tal de ayudarte
+      bueno eso es todo, espero que estes bien o que sientas que todo va para bien, sos una muy buena, gran y hermosa persona
+
+      seguramente en 10 o 15 dias te mande un mensaje por wpp ai me animo para saber de vos, no se si te va a molestar pero bueno, me gustaria si estas bien, si estas comiendo, si estas durmiendo bien, como te esta yendo en la uni, si estas haciendo cosas que te gustan, en fin me gustaria saber un poco de vos, espero no molestarte
+
+      <a href="https://photos.app.goo.gl/VhhnDKkyi6VJN3BRA"> :( </a>
+
+
+      siempre que suena esta cancion me acuerdo de vos, capaz no es muy linda pero si pienso en vos
+      <a href="https://open.spotify.com/intl-es/track/3rXckjqZbQ1xrb7K5h5yTQ?si=a018ec5bf117495b">...</a>
+      <a href="https://open.spotify.com/intl-es/track/445uGGM6s7NYzxF4VFqPnH?si=baab240a421449b3"> :( </a>
+
+      igualmente dudo que veas esto, hace mucho no lo actualizo seria normal que no entres a ver pero si lo ves te mando un re abrazo
+      `
+    },{
+      fecha: '21 de marzo de 2026',
+      titulo: 'Sabado',
+      texto:
+      `
+      Hola como estas? espero que bien
+
+      se que te dije que no iba actulizar mas la pagina pero bueno, me sirve para poder "hablar" con alguien aunque bueno, de paso me desahogo en algun lugar y bueno si lo llegas a ver vas a poder saber un poco de mi
+
+      el viernes hable con la sophi por llamada y me dijo que esta impresionada de que lleve todo de la mejor forma estando tan lejos de todos y sin nada y me hizo sentir mal porque yo puedo decir que todo esta bien pero lo unico que esta bien es como llevo la universidad
+      tuve tantas ganas de rendirme pero de momento sigo pensando que es la salida facil y tengo que salir adelante, para mi familia todo es facil para mi pero nadie se pone en mi lugar es re dificil socializar, en los 3 grupos que estoy de las 3 materias que estoy cursando me asignaron como lider porque soy re hincha pelotas pero fuera de eso cada uno hace su vida, y todos estan en su ultimo año y ya estan trabajando mientras terminan de cursar y menos que menos van a querer socializar conmigo, tengo el contacto de todos pero quedo re fuera de lugar se me hace de mandarles un mensaje que no sea relacionado con las actividades que tenemos que hacer, si bien siento que me estuve fortaleciendo mucho el estar aca pero hay momentos en los que se me derrumba todo, no se, llegue a la conclusion de que no se ser feliz
+
+      bueno eso es un resumen de todo el tiempo de lo que no actualice esto, llegan estas noches y no se que hacer, estuve todo el dia preparando cosas para la universidad porque tengo que presentar un monton de tps y rendir 2 examenes y ya termino una de las materies este 27 y supongo que tendre que empezar a cursar la ultima materia o sea estaria cursando 3 de vuelta pero ya aprobare una
+
+      Realmente deseo que estes bien, cuidate mucho porfa!!
+      `
+    },{
+      fecha: '22 de marzo de 2026',
+      titulo: 'Domingo',
+      texto:
+      `
+      Hoy iba siendo un dia normal, me pedi comida para cenar y salgo a atender el delivery de la nada se paro una camioneta estilo jeep renegade y se bajaron unos encapuchados con pistolas y cuchillos y le dieron a alguien que andaba por ahi, no lo puedo creer, estoy horrorizado me tiembla todo el delivery me empujo a la casa y gracias a que reacciono rapido creo que estamos bien, ahi nomas salieron chicos de la casa porque escucharon los disparos y me dijieron que  es algo que nunca antes paso y justamente hoy estuve viendo que colombia es el pais con mayor tasa de asesinatos cada 100 mil habitantes y con esto me lo creo, ahi nomas se fueron en la camioneta y llego la policia pero ya era tarde supongo, no vi ningun cuerpo afuera pero no se si se lo llevaron o lo tiraron al rio que esta aca cerca
+      ya me quiero volver, no me siento para nada seguro aca, tengo mucho miedo
       `
     }
+    ,{
+      fecha: '25 de marzo de 2026',
+      titulo: 'Miercoles',
+      texto:
+      `
+      No sabes como me gusto escucharte hablar, me hizo sentir bien de verdad pero tambien siento que te molesto, me hizo tan feliz escharte hablar y escuchar que me contaras las cosas que haces pero bueno tambien no pude contarte tantas cosas porque tenia miedo, tengo miedo
+      se que vos tambien estas pasando tus cosas dificiles y yo se que las vas a superar, confio en que si lo vas a lograr
+
+      esto es un descargo emocional se puede omitir
+
+      yo sigo con mucho miedo despues de lo que paso el domingo, ando muy deprimido por toda la situacion capaz exagero no se peri hoy me costo salir de la cama, todos los dias posteriores a lo que paso ando en la misma con miedo a salir
+      solo quiero irme ya de aca, ya aprendi la leccion de venir, quiero volver y que alguien me abrace poder hablar con alguien no se, ya son muchas noches en las que voy llorando solo agarrandome los hombros como si fuese alguien mas y tratar de alentarme, me estoy haciendo mas fuerte si pero tambien siento que no estoy en las mejores condiciones para estar aca, capaz tendria que haber rechazado la propuesta de venir, no se son muchas cosas que se me pasan por la mente
+
+      estoy realmente cansado de estar aca, no me siento seguro, no me siento bien, no me siento feliz, no se que estoy haciendo mal pero me siento de la mierda, tengo miedo de salir a la calle, tengo miedo de que me maten, tengo miedo de que me roben, tengo miedo de todo
+
+      pero bueno eso, estoy contento de poder saber algo de vos, yo te sigo amando y extrañando mucho, me alegra mucho saber que estas mejorando y que dentro de todo vas bien, vas a estar bien
+
+      hoy me senti de lo peor, llore a la tarde cuando sali de la clase y como vine a la casa me acoste en la cama y me dormi, despues es como que no se no siento nada, me puse a hablar con chat a modo de psicologo (se que no es lo mejor pero era lo unico que podia hacer en ese momento) y segun chat tengo un bloqueo emocional literalmente no me siento mal lo cual creo que es bueno pero tampoco me siento bien, solo me sientro estresado por las actividades y que tengo mucho que el viernes tenego que rendir las 3 materias el mismo dia pero no se, es raro no se si alguna vez te habra pasado algo parecido y como lo sentiste
+      `
+    }
+    ,{
+      fecha: '26 de marzo de 2026',
+      titulo: 'Jueves',
+      texto:
+      `
+      Hoy estuve un poco decaido pero me siento mejor, me puse a organizar y estudiar cosas porque tengo que rendir 3 materias mañana y me siento un poco estresado jaja
+      en los brakes que me tome ajuste algunas cosas de la pagina creo que queda mejor asi a como estaba antes pero bueno tendria que preguntarte si te gusta pero me da verguenza decirte que estuve actualizando la pagina depues de decirte que lo iba a dejar ahi nomas
+      asi que prefiero que lo veas por tu cuenta jaja aunque me dan muchas ganas de que me digas que te parece,
+
+      tengo muchas ganas de hablarte y de mandarte mensajes pero bueno estoy tratando de no ser muuy invasivo con vos xd ya estuve averiguando sobre las materias y las unidades para pasarte asi rendir tranquila pero aun no tengo nada, solo informacion cuando tenga algo te voy a estar pasando todo para que vayas estudiando por tu cuenta
+      espero que hayas tenido un buen dia y que no estes muy cansada de que no hayas podido dormir muy bien anoche eso de las 20hs aca te voy a preguntar que tal vas, espero no molestarte
+      `
+    }
+    ,{
+      fecha: '28 de marzo de 2026',
+      titulo: 'Sabado',
+      texto:
+      `
+      Buenas
+
+      ayer fue un dia muy movido, por mas pruvada que sea la universidad a la los profesores no se les ocurre evaluar en otro momento que no sea cuando esta finalizando el corte (Los cortes se evaluan cada fin de mes parece o sea que voy a tener 4 cortes) y ayer fua que estres que manejaba no te haces una idea
+      en el primer examen me fue bien, me saque 27/30 asi que me quedo tranquilo, depues me junte con el grupo de la otra asignatura para rendir oral y fue todo un caos organizarlos pero bueno fue muy larga la historia pero al final pasamos, el profesor trajo un experto en gestion de proyectos y literalmente nos papeo al frente, teniamos 5 min para exponer el proyecto y yo tenia que decir lo numeros (Financiacion y todo eso) nos papeo teniamos todo mal para el jajaj nos pedia que pongamos las fuentes en la presentacion y yo como ????? la primera vez que pasa eso pero bueno defendi a muerte el proyecto y mis compañeros... bueno... hicieron lo que pudieron digamos agachaban la cabeza y no peleaban pero bueno el no evalua solo fue a decirnos que cambiar y cosas asi todas las fuentes y eso lo tenemos en el informe ejectivo que le dimos al profe asi que no se como seran las notas de esa materia aun
+      Despues tuve con otro profe y tambien habia que hacer otra defensa oral de problemas de seguridad de una organizacion que nos dio el y bueno esta vez no deje que mis compañeros hablen porque en la presentacion anterior perdimos 3 min porque uno de los que presentaba estaba muy nervioso y se trabo tanto que no pude casi hablar, cuando me toco hablar el profe me dice tenes 30 segs asi que dije todo en modo rap god pero no estaba bueno. Cuestion hice que nos evaluaran primero y dije casi todo, lo que no dije fue para que participara mi grupo y bueno en esa materia finalizo el corte con 9.7/10 no se porque no me puso el 10 pero bueno es buena nota asi que  no me voy a quejar y alli termino el dia, tener la cabeza en tantas cosas me hizo estar muy cansado, volvi muerto a la casa y solo queria estar en cama escuchando de TheNeigbourhood y bueno me fui a dormir
+
+      hoy me levante a las 8 aprox porque me puse a prerar cosas de la tesis y depues tuve una reunion con javier, 2 horas para organizar toda la tesis aplicar correciones y agregar nuevos detalles que estuve viendo miestras estoy aca, ahora me voy a cocinar y como tengo tiempo libre ya que finalizo el corte voy a ver a fondo la tesis para avanzar lo mas que pueda en este tiempo para no tener tanto quilombo cuando vuelva, quiero estar tranquilo, ademas el dia esta reeee gris y lluvioso asi que aprovecho a full para avanzar con eso.
+      espero que estes mejor depues de la caida de la moto y por la dudas si no volvemos a hablar espero que sirva lo que te dijo el medico para que puedas domrir esta noche bien aunque sea
+      `
+    },
+    {
+      fecha: '30 de marzo de 2026',
+      titulo: 'Lunes',
+      texto:
+      `
+      Hola espero que estes bien y que hayas podido descansar el finde de semana
+
+      al final te pude conseguir el material para que puedas estudiar e intentar rendir libre, no te quiero molestar por wpp, ya entendi cual es mi lugar asi que te lo mande por mail, espero que lo veas por ahi porque no creo que lo vayas a ver por aca la verdad, de cualquier forma te dejo el link para que accedas
+
+      <a href="https://drive.google.com/drive/folders/1bFuompjn4DL-AOWcLJOuns4iwhnnmB_K?usp=drive_link"> material de estudio </a>
+
+      la sophia esta semana va a estar en chilecito asi que si queres pedirle los auriculares, por mi esta bien y no hay problema preferiria que lo pidas la verdad me siento mal de haberte pedido los tuyos, te termine jodiendo nomas, pero no quiero decirle que te los de por las dudas te vaya a molestar la verdad, ya no quiero sentirme molesto, ni sentir que te molesto, perdon
+
+      espero que tengas un buen incio de semana y que te vaya muy bien en tu dia, trabajo, universidad y lo que tengas planeado hacer
+
+      te mando un abrazo grande, cuidate mucho
+      `
+    },
+    {
+      fecha: '1 de abril de 2026',
+      titulo: 'Miercoles',
+      texto:
+      `
+      Buenas
+
+      que dia mas agotador y largo el de ayer y hoy, vendi mi computadora y me compre una nueva, salio todo bien por los menos y gane un poco de plata aunque sea
+
+      pero igualmente me siento casado de todo, me duele la cabeza por todo como si necesitara dejar de pensar 2 dias enteros, hoy estuve a full investigando e instalando todo en la computadora para trabajarlo en la tesis y me hubiese gustado que llueva para sentirme mas en el mood
+      pero igualmente ya me estoy deprimiendo de vuelta, necesito de vuelta que me de el bloqueo emocional para estar mas tranquilo en mi vida, lo bueno es que  no me queda mucho aca, lo malo que no se que hacer para motivarme, encontrare algo para sentirme mejor supongo, pero bueno, le haye el gusto a estar en la habitacion lamentablemente
+
+      espero que manaña llueva todo el dia para acompañarme en mi tristeza
+
+      que tengas linda semana santa, que descases o que hagas muchas actividades que te gusten, espero que estes bien
+      `
+    },
 ];
 
 

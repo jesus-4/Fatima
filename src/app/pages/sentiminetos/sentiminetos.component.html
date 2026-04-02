@@ -1,49 +1,35 @@
 <div class="page-wrapper">
   <app-navbar></app-navbar>
-
   <div class="background-kanji">愛</div>
 
+  <div class="page-content">
+    <canvas #starsCanvas class="stars-canvas"></canvas>
 
-    <div class="page-content">
-      <canvas #starsCanvas class="stars-canvas"></canvas>
-
-
-
-
-      <div class="diario-container">
-
-  <div class="diario-card"
-       *ngFor="let entry of entries"
-       (click)="entry.abierto = !entry.abierto">
-
-    <!-- Cabecera -->
-    <div class="diario-header">
-      <span class="diario-fecha">{{ entry.fecha }}</span>
-      <span class="diario-titulo">{{ entry.titulo }}</span>
-      <span class="diario-icon">
-        {{ entry.abierto ? '−' : '+' }}
-      </span>
+    <div class="diario-container">
+      <div class="mes-bloque" *ngFor="let grupo of entradasAgrupadas">
+        <div class="mes-titulo">{{ grupo.mes }} {{ grupo.anio }}</div>
+        <div class="dias-fila">
+          <div
+            class="dia-chip"
+            *ngFor="let entry of grupo.items"
+            (click)="abrirModal(entry)">
+            {{ entry.diaSemana }} {{ entry.dia }}
+          </div>
+        </div>
+      </div>
     </div>
 
-    <!-- Contenido -->
-    <div class="diario-body" [class.abierto]="entry.abierto">
-
-      <p [innerHTML]="entry.texto"
-          (click)="$event.stopPropagation()"></p>
-
-
-
-      <div class="diario-imagenes" *ngIf="entry.imagenes?.length">
-        <a *ngFor="let img of entry.imagenes"
-           [href]="img" target="_blank">
-          📷 Ver imagen
-        </a>
+    <!-- Modal -->
+    <div class="modal-overlay" *ngIf="entradaAbierta" (click)="cerrarModal()">
+      <div class="modal-caja" (click)="$event.stopPropagation()">
+        <div class="modal-fecha">{{ entradaAbierta.fecha }}</div>
+        <div class="modal-titulo">{{ entradaAbierta.titulo }}</div>
+        <div class="modal-texto" [innerHTML]="entradaAbierta.texto"></div>
+        <button class="modal-cerrar" (click)="cerrarModal()">Cerrar</button>
       </div>
-
     </div>
 
   </div>
-
 </div>
 
 
@@ -299,5 +285,5 @@
     </div>
 
     <p class="text1">no es la gran cosa cuando apretas porque todavia lo venia trabajando pero pasaron cosas el domingo pero realmente queria que nos vieramos el lunes me arrepiento tanto de haberte contestado tan mal</p> -->
-</div>
-</div>
+<!-- </div>
+</div> -->
