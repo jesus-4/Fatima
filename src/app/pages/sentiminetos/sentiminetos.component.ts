@@ -814,6 +814,22 @@ get entradosPorMes(): MesGrupo[] {
       que tengas linda semana santa, que descases o que hagas muchas actividades que te gusten, espero que estes bien
       `
     },
+    {
+      fecha: '2 de abril de 2026',
+      titulo: 'Jueves',
+      texto:
+      `
+      Hoy, fue un dia normal por lo menos no me duele la cabeza como ayer, ahora estoy tomando un cafe y luego me ire a hacer calistenia
+
+      estaba considerando que deberia aprovechar que estoy en bogota e irme a un cine con IMAX y ver una pelicula en ese formato y justo como anda de estreno proyeto fin del mundo lo estaba considerando con muchas ganas para ser sincero, le pregunte a luis si iria a ver (no como invitacion sino para ver si le nacia ir e invitarlo a que vayamos) y me dijo que no asi que bueno no me voy a morir por ir solo y bueno cumplo uno de mis suenos de conocer un y ver una pelicula en IMAX 
+      igualmente no se cuando voy a ir pero deberia no demorarme en tomar la desicion porque si mas lo pienso menos ganas me van a dar jaja
+      el lunes ya empiezo cursar ciclo 2, estaria haciendo 3 materias de vuelta porque ya termine una, la que nos papeo el experto en gestion de proyectos que te comentaba la otra vez en fin 
+
+      no hice nada hoy, lei e investigue a la manana y la tarde me dormi la siesta, ahora tomo el cafe y luego a entrenar y ya va a ser de noche asi que preprar la cena e irme a domrir para comenzar un nuevo dia
+
+      saludos, jesus
+      `
+    },
 ];
 
 
