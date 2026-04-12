@@ -846,7 +846,7 @@ get entradosPorMes(): MesGrupo[] {
     },
     {
       fecha: '11 de abril de 2026',
-      titulo: 'Domingo',
+      titulo: 'Sabado',
       texto:
       `
       Guenas
@@ -860,7 +860,7 @@ get entradosPorMes(): MesGrupo[] {
       de momento hice andar a 5 subagentes me queda hacer que los otros hagan bien su trabajo y listo, te imaginas como saco la tesis de una, porque se basan en las especificaciones que yo coloque, es decir tengo que definir todo bien pero ya tengo todo en la cabeza como de como hacerlo, ademas hay uno que va a documentar todo, es decir otro trabajo que me quito no se lo podes ver como un speedrun de la tesis jaja 
       cuando todo salga bien, voy a ver si lo puedo poner dentro de este proyecto para ver como interpreta lo realizado, como me da opciones de mejoras o etc
 
-      Como te habia dicho que estaba escuchando mucho a de neighbourhood, te voy a pasar esta cancion que me gusto mucho, entre otras pero no te voy a spamear todas jaja bueno ya que hablo de musica queria decirte pero nunca vi la oportunidad de preguntarte si la cancion que me pasaste la guitarra es una acustica
+      Como te habia dicho que estaba escuchando mucho a de neighbourhood, te voy a pasar esta cancion que me gusto mucho, entre otras pero no te voy a spamear todas jaja bueno ya que hablo de musica queria decirte pero nunca vi la oportunidad de preguntarte si la cancion que me pasaste la guitarra es una acustica, la escucho a full como dijiste cunado volvia el miercoles de la uni en el colectivo, escuche completas las dos que me pasaste analisando todo pero buneo nunca vi la op de decirte que la habia escuchado
       <a href="https://open.spotify.com/intl-es/track/6pFmi8RgLNHLB7nOan39RA?si=5487bcb3b0524822">good grief</a>
 
       Cambiando de tema, despues de quedarme a full con eso, me fui a entrenar un poco para despejar la mente y volvi a merendar
@@ -874,5 +874,25 @@ get entradosPorMes(): MesGrupo[] {
       que estes bien!
       `
     },
+    {
+      fecha: '12 de abril de 2026',
+      titulo: 'Domingo',
+      texto:
+      `
+      Buenas
+
+      al final hoy si me tome el dia libre, no se me desperte raro, peleando contra mi mismo y no se siento que tengo mucho potencial pero no lo estoy explotando, me como la cabeza de una forma y me pongo triste por muchas cosas ya te habras dado cuenta pero yo siento que estoy mejorando porque puedo afrontarlo y tomar accion y ahí me distraigo pere hay veces que no puedo y es normal supongo, no siempre podemos, no siempre estamos bien eso digo ahora pero depues tambien entiendo el no saber aprovechar lo que somos. 
+      No se delirios que tengo jaja
+
+      mira, yo no siempre me siento bien pero algunos dias escuchaba un audio que me hacia sentir un poco mejor y no se si te va a servir pero yo te lo paso porque capaz necesitas que escucharlo tambien, no se espero que te haga sentir mejor, a mi me hace llorar pero me hace sentirme un poco mejor y tomar las cosas con un poco de calma
+      
+      <a href="https://photos.app.goo.gl/ZraeHjRgZ4F6dhvH8">videico</a>
+
+      al final somos personas distintas y capaz a vos no te genera nada pero bueno me parece bueno compartirte por las dudas te ayude un poco como me ayudo a mi 
+      espero que estes descansando bien este domingo, no estress solo relax que estes practicando bien lo de spinetta y exitos con los estudios si lo intentaste y sino que sea un finde para estar tranquila
+
+      te mando un abrazo
+      `
+      },
 ];
 }
