@@ -830,9 +830,49 @@ get entradosPorMes(): MesGrupo[] {
       saludos, jesus
       `
     },
+    {
+      fecha: '5 de abril de 2026',
+      titulo: 'Domingo',
+      texto:
+      `
+      Feliz pascuas!
+
+      espero que hays pasado una linda semana santa, no se si habras viajado, o si habras quedado en tu depto pero espero que por lo menos hayas tenido la posibilidad de descansar y estar bien
+      yo no hice nada jaja, no tengo plata para salir ni puedo permitirme hacer muchos gastos asi que solo estuve investigando para la tesis y avance un monton, al menos eso creo, aprendi una arquitectura nueva para el desarrollo y me parece espectacular la verdad todo lo que aprendi me re sirve para todo, no solo para la tesis sino para cuando empiece a trabajar poder implementar todo este conocimiento me va a llevar a otros lugares, me siento seguro de eso
+      hoy me hice un intento de panqueques de avena y no me quedaron mal, me olvide de ponerle endulzante pero fuera de eso estan pasables, con mate o cafe lo voy comiendo y bueno tienen buenos aportes asi que voy comiendo eso mientras estudie todo el dia, un finde aburrido pero tranqui, tampoco quiero volver a vivir lo que pase la otra vez sigo con miedo pero tengo que salir a hacer cosas pero bueno lo bueno es que estoy cumpliendo con lo que vine a hacer a colombia, espero volver y poder recibirme rapido nomas
+
+      que tengas una buena noche este domingo y buen comienzo de semana mananan 
+      `
+    },
+    {
+      fecha: '11 de abril de 2026',
+      titulo: 'Domingo',
+      texto:
+      `
+      Guenas
+
+      Bueno, como te dije que te iba a mostrar el avance de la tesis que estoy haciendo, te muestro algo que hice hace unos dias, no es la finalidad pero se entiende la idea
+
+      <a href="https://photos.app.goo.gl/w3hCA6cNvbLai9ug7"> avance tesis </a>
+
+      la idea es desarrollar una IA, que pueda administrar todo el proyecto, TODO pero bueno eso estoy teniendo problemas y estoy metido a full con eso, hoy vi una conferencia sobre como trabajan con esta herramienta pero eso del video es un solo agente haciendo todo, mi idea es que lo voy a tener como un 1 agente lider que lidere a 8 sub agentes, o sea es como tener a todo un equipo de desarrollo sin tener que contratar a gente ni nada.
+      Esta bueno por lo que optimiza el tiempo de uno pero bueno es una fase muy dura de aprendizaje que estoy llevando ahora pero me parece muy importante poder hacerlo, el tema es que voy a tener que empezar a gastar plata para poder contratar agentes mas potentes pero va a valer la pena, es como una inversion
+      de momento hice andar a 5 subagentes me queda hacer que los otros hagan bien su trabajo y listo, te imaginas como saco la tesis de una, porque se basan en las especificaciones que yo coloque, es decir tengo que definir todo bien pero ya tengo todo en la cabeza como de como hacerlo, ademas hay uno que va a documentar todo, es decir otro trabajo que me quito no se lo podes ver como un speedrun de la tesis jaja 
+      cuando todo salga bien, voy a ver si lo puedo poner dentro de este proyecto para ver como interpreta lo realizado, como me da opciones de mejoras o etc
+
+      Como te habia dicho que estaba escuchando mucho a de neighbourhood, te voy a pasar esta cancion que me gusto mucho, entre otras pero no te voy a spamear todas jaja bueno ya que hablo de musica queria decirte pero nunca vi la oportunidad de preguntarte si la cancion que me pasaste la guitarra es una acustica
+      <a href="https://open.spotify.com/intl-es/track/6pFmi8RgLNHLB7nOan39RA?si=5487bcb3b0524822">good grief</a>
+
+      Cambiando de tema, despues de quedarme a full con eso, me fui a entrenar un poco para despejar la mente y volvi a merendar
+      <a href="https://photos.app.goo.gl/P6mM4kQtqaBPPZA49"> yog </a>
+      
+      es una granola, con un yogurt raro, o creo que no es yogurt, no investigue pero me lo recomendo david, es rico pero nunca en mmi vida habia visto kumis no se, me da miedo investigar y que sea malo pero por el precio me parece re bien, mientras preparaba eso me puse a hervir romero porque la sophia me paso un video donde se colocan eso para que no se te caiga el pelo, te digo porque capaz te ayuda, el agua hervida la guardas y todos los dias tenes que rociarte un poco en el cuero cabelludo y hacerte masajes, pero lo malo es que me hice eso cuando sali de bananarme y vieras la cantidad de pelo que se ma cayo mientras me hacia los masajes, tengo un miedo a quedarme pelado jajja definitivamente si veo que voy para ese camino me voy a hacer la operacion/implatacion de cuero cabelludo
+      bueno y esto lo escribi mientras tomaba mate y escucho musica, capaz no fue un dia muy de descanso pero siento que estuvo bien, ahora estoy re chill con el mate y la musica acostado en la cama
+
+      pero bueno a la hora que subo esto ya es tarde alla, no se si vas a estar durmiendo o haciendo x cosa pero por las dudas 
+
+      que estes bien!
+      `
+    },
 ];
-
-
-
-
 }
