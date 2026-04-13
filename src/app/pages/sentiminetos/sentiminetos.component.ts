@@ -116,6 +116,8 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
   // ── HTTP ────────────────────────────────────────────────────────
 
   items = signal<ContentItem[]>([]);
+  entries = signal<DiarioEntry[]>([]);
+  
   constructor(private http: HttpClient) {}
 
   entradasAgrupadas: MesGrupo[] = [];
@@ -125,7 +127,12 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
     .get<ContentData>('assets/data/conten2.json')
     .subscribe(data => this.items.set(data.items));
 
-  this.entradasAgrupadas = this.calcularGrupos();
+  this.http
+    .get<DiarioEntry[]>('assets/data/diario.json')
+    .subscribe(data => {
+      this.entries.set(data);
+      this.entradasAgrupadas = this.calcularGrupos();
+    });
   }
 
   // ── Anillo ──────────────────────────────────────────────────────
@@ -157,9 +164,10 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
   // ── Diario ──────────────────────────────────────────────────────
 
   private calcularGrupos(): MesGrupo[] {
-  const grupos = new Map<string, MesGrupo>();
+    const entries = this.entries();
+    const grupos = new Map<string, MesGrupo>();
 
-  for (const entry of this.entries) {
+    for (const entry of entries) {
     const limpia = entry.fecha.replace(/\bde\b/gi, '').replace(/\s+/g, ' ').trim();
     const partes = limpia.split(' ');
     const dia    = parseInt(partes[0]);
@@ -212,7 +220,7 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
 get entradosPorMes(): MesGrupo[] {
   const grupos = new Map<string, MesGrupo>();
 
-  for (const entry of this.entries) {
+  for (const entry of this.entries()) {
     // Eliminar "de" y espacios extra, dejar solo "dia mes anio"
     const limpia = entry.fecha.replace(/\bde\b/gi, '').replace(/\s+/g, ' ').trim();
     const partes = limpia.split(' ');
@@ -248,7 +256,7 @@ get entradosPorMes(): MesGrupo[] {
   });
 }
 
-  entries: DiarioEntry[] = [
+  private entriesArray: DiarioEntry[] = [
   {
     fecha: '16 enero 2026',
     titulo: 'Feliz 16 de enero ❤️',
@@ -889,7 +897,12 @@ get entradosPorMes(): MesGrupo[] {
       <a href="https://photos.app.goo.gl/ZraeHjRgZ4F6dhvH8">videico</a>
 
       al final somos personas distintas y capaz a vos no te genera nada pero bueno me parece bueno compartirte por las dudas te ayude un poco como me ayudo a mi 
+      aun me da cosa hablarte asi nomas, se que me dijiste que note molesto pero bueno mis pensamientos no me dicen lo mismo, me dan muchas ganas de preguntarte como estas, soy muy pesado 
+
+      sali a hacer ejercicio como todos los dias, y habian unos tipos jugando basquet asi que aproveche y les dije si podia jugar con ellos y me dejaron asi que bueno por lo menos me pude distraer un poco, estoy re fuera de forma, re cansado pero me diverti un rato
+
       espero que estes descansando bien este domingo, no estress solo relax que estes practicando bien lo de spinetta y exitos con los estudios si lo intentaste y sino que sea un finde para estar tranquila
+      
 
       te mando un abrazo
       `
