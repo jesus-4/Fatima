@@ -1,0 +1,74 @@
+<div class="login-page">
+  <div class="login-container">
+    <h1 class="title">Elegí tu usuario</h1>
+    
+    <!-- F User Accordion -->
+    <div class="user-item">
+      <button 
+        class="user-button" 
+        [class.expanded]="expandedUser() === 'F'"
+        (click)="toggleUser('F')">
+        <span class="user-name">F</span>
+        <span class="arrow">▼</span>
+      </button>
+      
+      <div class="user-content" *ngIf="expandedUser() === 'F'">
+        <button 
+          class="help-btn" 
+          (click)="toggleHelp()">
+          {{ showHelp() ? 'Ocultar ayuda' : '¿Olvidaste tu contraseña?' }}
+        </button>
+        
+        <div class="help-section" *ngIf="showHelp()">
+          <div class="hint-box">
+            <p class="hint-title">Pista 1:</p>
+            <p class="hint-text">Nombre de una canción que le diste mucho valor por un ser muy querido que ya no está, su nombre le pusiste a un cuadro que presentaste en el gonzaleano</p>
+            <p class="hint-pista"> pista: you are a <strong>...</strong> on my <strong>...</strong></p>
+          </div>
+          <div class="hint-box">
+            <p class="hint-title">Pista 2:</p>
+            <p class="hint-text">Nombre de una canción que sentí que representó mucho nuestros comenzar pero cuando vimos la letra me arrepenti</p>
+            <p class="hint-pista"> pista: late nights in the <strong>...</strong></p>
+          </div>
+        </div>
+
+        <input 
+          type="password" 
+          [ngModel]="password()"
+          (ngModelChange)="password.set($event)"
+          (keyup.enter)="login('F')"
+          placeholder="Ingresa tu contraseña"
+          class="password-input">
+        
+        <div class="error" *ngIf="error()">{{ error() }}</div>
+        
+        <button class="login-btn" (click)="login('F')">Entrar</button>
+      </div>
+    </div>
+
+    <!-- J User Accordion -->
+    <div class="user-item">
+      <button 
+        class="user-button" 
+        [class.expanded]="expandedUser() === 'J'"
+        (click)="toggleUser('J')">
+        <span class="user-name j">J</span>
+        <span class="arrow">▼</span>
+      </button>
+      
+      <div class="user-content" *ngIf="expandedUser() === 'J'">
+        <input 
+          type="password" 
+          [ngModel]="password()"
+          (ngModelChange)="password.set($event)"
+          (keyup.enter)="login('J')"
+          placeholder="Ingresa tu contraseña"
+          class="password-input">
+        
+        <div class="error" *ngIf="error()">{{ error() }}</div>
+        
+        <button class="login-btn" (click)="login('J')">Entrar</button>
+      </div>
+    </div>
+  </div>
+</div>
