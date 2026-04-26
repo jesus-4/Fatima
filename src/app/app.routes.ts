@@ -25,14 +25,14 @@ export const routes: Routes = [
     path: '404',
     loadComponent: () => import('./pages/no-page/no-page.component').then(m => m.NoPageComponent)
   },
-  {
-    path: 'flowers',
-    loadComponent: () => import('./pages/flores/flores.component').then(m => m.FloresComponent),
-    canActivate: [authGuard]
-  },
-  {
-    path: 'cuaderno',
-    loadComponent: () => import('./pages/cuaderno/cuaderno.component').then(m => m.CuadernoComponent),
-    canActivate: [authGuard]
-  },
+  // {
+  //   path: 'flowers',
+  //   loadComponent: () => import('./pages/flores/flores.component').then(m => m.FloresComponent),
+  //   canActivate: [authGuard]
+  // },
+  // {
+  //   path: 'cuaderno',
+  //   loadComponent: () => import('./pages/cuaderno/cuaderno.component').then(m => m.CuadernoComponent),
+  //   canActivate: [authGuard]
+  // },
 ];
