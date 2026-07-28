@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "name": "Fornite",
+    "image": "assets/images/games/Fornite.webp"
+  },
+  {
+    "id": 2,
+    "name": "Detroit",
+    "image": "assets/images/games/detroit.webp"
+  },
+  {
+    "id": 3,
+    "name": "Peak",
+    "image": "assets/images/games/peak.webp"
+  },
+  {
+    "id": 4,
+    "name": "Rv There Yet",
+    "image": "assets/images/games/rv-there-yet.webp"
+  }
+]
