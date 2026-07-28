@@ -13,7 +13,11 @@ export class AuthService {
   constructor(private router: Router) {
     const stored = localStorage.getItem('user');
     if (stored) {
-      this.currentUser.set(JSON.parse(stored));
+      try {
+        this.currentUser.set(JSON.parse(stored));
+      } catch {
+        localStorage.removeItem('user');
+      }
     }
   }
 

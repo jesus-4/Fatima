@@ -22,6 +22,11 @@ export const routes: Routes = [
     canActivate: [authGuard]
   },
   {
+    path: 'propuestas',
+    loadComponent: () => import('./pages/propuestas/propuestas.component').then(m => m.PropuestasComponent),
+    canActivate: [authGuard]
+  },
+  {
     path: '404',
     loadComponent: () => import('./pages/no-page/no-page.component').then(m => m.NoPageComponent)
   },

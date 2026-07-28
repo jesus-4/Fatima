@@ -1,0 +1,52 @@
+<div class="page-wrapper">
+  <app-navbar></app-navbar>
+
+  <div class="page-content">
+    <h1 class="title">Propuestas</h1>
+    <p class="subtitle">-------------------------------------------------------------------------------</p>
+
+    <!-- ── Sección Juegos ── -->
+    <section class="section">
+      <h2 class="section-title">Juegos</h2>
+
+      <div class="carousel">
+        @for (game of games(); track game.id) {
+          <div
+            class="carousel-card"
+            [class.selected]="selectedGame()?.id === game.id"
+            (click)="selectGame(game)"
+          >
+            <img [src]="game.image" [alt]="game.name" class="carousel-img" />
+            <div class="carousel-label">{{ game.name }}</div>
+            <div class="carousel-overlay">
+              <p class="hover-text">Te gustaría jugar a<br><strong>{{ game.name }}</strong></p>
+            </div>
+          </div>
+        }
+      </div>
+
+      <p class="hint">← Deslizá para ver más →</p>
+    </section>
+
+    <!-- ── Resultado ── -->
+    @if (sent()) {
+      <p class="sent-text">¡Listo! Se envió tu respuesta 💖</p>
+    } @else {
+      @if (selectedGame()) {
+        <p class="selection-text">Elegiste: <strong>{{ selectedGame()?.name }}</strong></p>
+      }
+
+      <button
+        class="accept-btn"
+        [disabled]="!selectedGame() || sending()"
+        (click)="sendEmail()"
+      >
+        @if (sending()) {
+          Enviando...
+        } @else {
+          Acepto
+        }
+      </button>
+    }
+  </div>
+</div>
