@@ -36,10 +36,6 @@ export class HomeComponent implements OnInit {
       src: 'assets/music/Julieta Venegas - Limon Y Sal.mp3'
     },
     {
-      title: 'Si Tu Me Quisieras ',
-      src: 'assets/music/Mon Laferte - Si Tu Me Quisieras.mp3'
-    },
-    {
       title: 'No Te Apartes De Mí.',
       src: 'assets/music/Vicentico Ft. Valeria Bertuccelli - No Te Apartes De Mí. - Rober Lizárraga.mp3'
     },
