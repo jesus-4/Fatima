@@ -51,7 +51,7 @@ export class PropuestasComponent implements OnInit {
         to_email: 'claramontejesus@gmail.com',
         game_name: game.name,
         message: `Me gustaría jugar a ${game.name}`,
-      });
+            });
       this.sent.set(true);
     } catch (err) {
       console.error('Error al enviar mail:', err);
