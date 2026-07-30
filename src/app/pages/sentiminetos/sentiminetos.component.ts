@@ -218,9 +218,11 @@ export class SentiminetosComponent implements AfterViewInit, OnDestroy, OnInit {
   ];
 
   entradaAbierta: DiarioEntry | null = null;
+  imagenAbierta: string | null = null;
 
   abrirModal(entry: DiarioEntry) { this.entradaAbierta = entry; }
   cerrarModal()                   { this.entradaAbierta = null; }
+  cerrarImagen()                  { this.imagenAbierta = null; }
 
 get entradosPorMes(): MesGrupo[] {
   const grupos = new Map<string, MesGrupo>();

@@ -25,8 +25,23 @@
         <div class="modal-fecha">{{ entradaAbierta.fecha }}</div>
         <div class="modal-titulo">{{ entradaAbierta.titulo }}</div>
         <div class="modal-texto" [innerHTML]="entradaAbierta.texto"></div>
+        <div class="modal-imagenes" *ngIf="entradaAbierta.imagenes && entradaAbierta.imagenes.length">
+          <img
+            *ngFor="let img of entradaAbierta.imagenes"
+            [src]="img"
+            alt="imagen del diario"
+            class="modal-img"
+            loading="lazy"
+            (click)="imagenAbierta = img"
+          />
+        </div>
         <button class="modal-cerrar" (click)="cerrarModal()">Cerrar</button>
       </div>
+    </div>
+
+    <!-- Lightbox -->
+    <div class="lightbox-overlay" *ngIf="imagenAbierta" (click)="cerrarImagen()">
+      <img [src]="imagenAbierta" class="lightbox-img" />
     </div>
 
   </div>

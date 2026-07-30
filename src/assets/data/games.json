@@ -18,5 +18,10 @@
     "id": 4,
     "name": "Rv There Yet",
     "image": "assets/images/games/rv-there-yet.webp"
+  },
+  {
+    "id": 5,
+    "name": "Minecraft",
+    "image": "assets/images/games/minecraft.webp"
   }
 ]

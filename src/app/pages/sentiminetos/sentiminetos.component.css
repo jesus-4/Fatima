@@ -99,6 +99,43 @@ body, .page-wrapper {
 
 .modal-texto a { color: #f7b7c8; text-decoration: none; font-weight: 500; }
 
+.modal-imagenes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 16px;
+}
+
+.modal-img {
+  max-height: 120px;
+  width: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  border: 1px solid rgba(255,209,212,0.15);
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+.modal-img:hover {
+  transform: scale(1.05);
+}
+
+.lightbox-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.92);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  cursor: pointer;
+}
+.lightbox-img {
+  max-width: 90vw;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
 .modal-cerrar {
   margin-top: 24px;
   display: block;
